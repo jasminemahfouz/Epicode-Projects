@@ -1,0 +1,82 @@
+/* CSS document */
+
+#logo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15%;
+      }
+
+header p 
+    {   
+        border:1px solid yellow;
+        border-top: 1px solid orange;
+        display: block;
+        background-color: rgba(251, 255, 0, 0.163);
+        text-align: center;
+        padding: 7px;
+        line-height: 1.5;
+}
+
+#t1{
+    font-size: 10px;
+    color: rgba(20, 71, 71, 0.862);
+}
+
+#t2{
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(20, 71, 71, 0.862);
+}
+
+#title{
+    text-align: center;
+    font-size: 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+    color: rgba(0, 0, 0, 0.745);
+}
+
+.margin{
+    margin-left: 26%;
+    margin-right: 30%;
+}
+.margin_pic{
+    margin-left: 24.6%;
+    margin-right: 30%;
+    border-radius: 10px;
+    width: 670px;
+}
+
+figcaption{
+        text-align: center;
+        font-size: 15px;
+        color: rgba(128, 128, 128, 0.726);
+        margin: 10px;
+    } 
+        
+.title_text{
+        font-size: 25px;
+        color: rgba(0, 0, 0, 0.767);
+}
+.line{
+    height: 1px;
+    color: #123455;
+    background-color: #123455;
+    border: none;
+}
+
+#text_3{
+    color: rgb(156, 4, 4);
+}
+#text_4{
+    color: rgb(7, 108, 96);
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight: bold; 
+}
+.line{
+    background-color: rgba(8, 211, 211, 0.71);
+}
