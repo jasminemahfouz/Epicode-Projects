@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compito javascript</title>
+</head>
+<body>
 
+ <h1> Compito JavaScript </h1>
+
+ <p>Elenca e descrivi i principali datatype in JavaScript. Prova a spiegarli come se volessi farli comprendere a un bambino:</p>
+
+ <ul> <caption> <b>Principali datatype in JavaScript</b></caption>
+    <li>Numeri</li>
+    <li>Stringhe</li>
+    <li>Booleani</li>
+    <li>Null</li>
+    <li>Undefined</li>
+    <li>Oggetti</li>
+ </ul>
+
+<p>Numeri: tipo di dato numerico. Tratta tutti i numeri (interi, decimali, negativi ecc)</p>
+    <script>
+        let interoPositivo = 433;   // niente apici! nè singoli nè doppi
+        let zero = 0;
+        let interoNegativo = -78;   // intero negativo
+        let numeroDecimale = 0.444; // il . fa da separatore per il valore decimale
+        // NaN not a number -> valore speciale di javascript che indica un valore numerico non definito
+        let somma = NaN;
+    </script>
+
+<p>Null: un'assenza intenzionale di valore, da non confondere con Undefined. Null ha sia valore che tipo:</p>
+    <script>
+        let w = ""; // valore "" tipo stringa
+    </script>
+
+
+<p>Undefined: una variabile senza valore è indefinita. Anche il tipo lo è .</p>
+    <script>
+        let j; // j non è assegnato nessun valore
+        o = undefined; // valore indefinito anche tipo
+    </script>
+
+
+<p>Stringhe : tipo di dato è una sequenza di caratteri/alfanumerico. Sono scritte con i quotes "" o '' .</p>
+    <script>
+        let nomeTel = "Iphone x"; 
+        let nomeTel2 = 'Samsung s9';
+    </script>
+
+
+<p>Booleani: ha due possibili valore, vero o falso.</p>
+    <script>
+        let k = 10;
+        let f = 2;
+        (k == f) // puo dare vero o falso
+    </script>
+
+
+<p>Oggetti: Il tipo object è un tipo speciale.
+Tutti gli altri tipi descritti sono definiti “primitivi”, perché i loro valori possono contenere solo una cosa (può essere una stringa, un numero o altro). Invece, gli oggetti vengono utilizzati per memorizzare una collezione di dati ed entità più complesse. </p>
+
+
+<p>Crea una variable chiamata "myName" e assegna ad essa il tuo nome, sotto forma di stringa.</p>
+    <script>
+        var myName = 'yasmin';
+    </script>
+
+
+<p> Scrivi il codice necessario ad effettuare un addizione (una somma) dei numeri 12 e 20.</p>
+    <script>
+        var a = 10;
+        var b = 20;
+        var Somma = a + b;
+    </script>
+
+
+<p> Crea una variable di nome "x" e assegna ad essa il numero 12.</p>
+    <script>
+        var x;
+        x = 12;
+    </script>
+
+
+<p> Riassegna un nuovo valore alla variabile "myName" già esistente: il tuo cognome. <br>
+Dimostra l'impossibilità di riassegnare un valore ad una variabile dichiarata con il costrutto const.</p>
+    <script>
+        myName = 'mahfouz';
+
+        const Dieci = 10 ;
+        Dieci = 12; // errore
+        Dieci = -11; // errore
+        Dieci = 10 + 2; // errore e cosi via 
+    </script>
+
+
+<p>Esegui una sottrazione tra i numeri 4 e la variable "x" appena dichiarata (che contiene il numero 12).</p>
+    <script>
+        var x = 12;
+        var sottrazione = 4 -x ;
+    </script>
+
+
+<p>Crea due variabili: "name1" e "name2". Assegna a name1 la stringa "john", e assegna a name2 la stringa "John" (con la J maiuscola!).
+        Verifica che name1 sia diversa da name2 (suggerimento: è la stessa cosa di verificare che la loro uguaglianza sia falsa).
+        EXTRA: verifica che la loro uguaglianza diventi true se entrambe vengono trasformate in lowercase (senza cambiare il valore di name2!).</p>
+<script>
+    let name1 = "john";
+    let namer2 = "John";
+    if (name1 == name2){
+        console.log("le stringe sono uguali")
+    } else {
+        console.log("le stringe sono diverse")
+    }
+    const isEqual = name1.toLowerCase() === name2.toLowerCase();
+</script>
+
+</body>
+</html>
