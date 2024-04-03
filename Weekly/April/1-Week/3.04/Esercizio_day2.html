@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio day2 javascript</title>
+</head>
+<body>
+
+<!-- ESERCIZIO 1 -->
+<script>
+    let x = 2;
+    let y = 10;
+
+    if (x > y) {
+    console.log('max è', x)
+    } else if (x < y) {
+    console.log('max è', y)
+    } else {
+    console.log('I numeri sono uguali')
+    }
+</script> 
+
+<!-- ESERCIZIO 2 -->
+<script>
+    let x1 = 2;
+    
+    if (x1 !== 5) {
+      console.log('not equal')
+    }
+</script>
+
+<!-- ESERCIZIO 3 -->
+<script>
+    let x2 = 45;
+
+    if (x2 % 5 === 0) {
+    console.log('divisibile per 5')
+    }
+</script>
+
+<!-- ESERCIZIO 4 -->
+<script> 
+    let y1 = 10;
+    let y2 = 2;
+    
+    if (y1 === 8 || y2 === 8 || y1 + y2 === 8 || y1 - y2 === 8 || y2 - y1 === 8) {
+      console.log('true')
+    };
+</script>
+
+<!-- ESERCIZIO 5 -->
+<script> 
+    let totShopping = 65;
+    let shipCost = 10;
+    let amountToPay = totShopping;
+
+    if (totShopping < 50) {
+    amountToPay += shipCost
+    };
+
+    console.log('Totale da pagare:', amountToPay);
+</script>
+
+<!-- ESERCIZIO 6 -->
+<script>
+    let totalShoppingCart2 = 65;
+    totalShoppingCart2 = totalShoppingCart2 * 0.8;
+    let shippingCost2 = 10;
+    let amountToPay2 = totalShoppingCart2;
+
+    if (totalShoppingCart2 < 50) {
+    amountToPay2 += shippingCost2
+    };
+
+    console.log('Totale da pagare:', amountToPay2);
+</script>
+
+<!-- ESERCIZIO 7 -->
+<script>
+    let a = 4;
+    let b = 20;
+    let c = 8;
+
+    if (a >= b) {
+    if (c >= a) {
+        console.log(c, a, b)
+    } else {
+        if (c >= b) {
+        console.log(a, c, b)
+        } else {
+        console.log(a, b, c)
+        }
+    }
+    } else {
+    if (c >= b) {
+        console.log(c, b, a)
+    } else {
+        if (z3 >= z1) {
+        console.log(b, c, a)
+        } else {
+        console.log(b, a, c)
+        }
+    }
+    }
+</script>
+
+<!-- ESERCIZIO 8 -->
+<script>
+   let test = 'Pane';
+
+   if (typeof test === 'number') {
+     console.log('è un numero!')
+   } else {
+     console.log('non è un numero!')
+   }
+</script>
+
+<!-- ESERCIZIO 9 -->
+<script>
+    let test2 = 19;
+
+    if (test2 % 2 === 0) {
+    console.log(' numero pari')
+    } else {
+    console.log('numero dispari!')
+    }
+    </script>
+
+<!-- ESERCIZIO 10 -->
+<script>
+    let val = 7;
+    if (val < 5) {
+    console.log('Meno di 5')
+    } else if (val < 10) {
+    console.log('Meno di 10')
+    } else {
+    console.log('Uguale a 10 o maggiore')
+    }
+</script>
+
+<!-- ESERCIZIO 11 -->
+<script>
+    const me = {
+    name: 'yasmin',
+    lastName: 'mahfouz',
+    hobby: ['art', 'photography'],
+    }
+
+    me.city = 'Toronto';
+    console.log(me);
+</script>
+
+<!-- ESERCIZIO 12 -->
+<script>
+
+    delete me.lastName;
+    console.log(me);
+
+</script>
+
+<!-- ESERCIZIO 13 -->
+<script>
+    me.skills.pop();
+    console.log(me);
+</script>
+
+<!-- ESERCIZIO 14 -->
+<script>
+    let myArray = []
+    myArray.push(1);
+    myArray.push(2);
+    myArray.push(3);
+    myArray.push(4);
+    myArray.push(5);
+    myArray.push(6);
+    myArray.push(7);
+    myArray.push(8);
+    myArray.push(9);
+    myArray.push(10);
+    console.log(myArray);
+</script>
+
+<!-- ESERCIZIO 15 -->
+<script>
+    myArray[9] = 100
+    console.log(myArray)
+</script>
+
+</body>
+</html>
