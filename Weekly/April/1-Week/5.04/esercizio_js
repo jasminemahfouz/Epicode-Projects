@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js esercizio</title>
+</head>
+<body>
+
+<!--ESERCIZIO 1-->  
+<script> 
+
+   const area = function (l1, l2) {
+     return l1 * l2
+    };
+   const areaResult = area(3, 4);
+   console.log(areaResult);
+
+</script>
+  
+   <!--ESERCIZIO 2-->
+<script>
+   const crazySum = function (num1, num2) {
+     if (num1 === num2) {
+       return (num1 + num2) * 3
+     } else {
+       return num1 + num2
+     }
+   };
+
+   console.log(crazySum(3, 3));
+
+</script> 
+
+<!--ESERCIZIO 3 --> 
+<script>
+   const crazyDiff = function (num) {
+     if (num > 19) {
+       return Math.abs(num - 19) * 3
+     } else {
+       return Math.abs(num - 19)
+     }
+   };
+   console.log(crazyDiff(3));
+</script>
+
+<!-- ESERCIZIO 4 -->
+<script>
+   const boundary = function (n) {
+     if ((n > 20 && n <= 100) || n === 400) {
+       return true
+     } else {
+       return false
+     }
+   };
+   
+   console.log('ex 4', boundary(3));
+</script>
+
+<!-- ESERCIZIO 5 --> 
+<script>
+   const epify = function (str) {
+     if (str.startsWith('YASMIN')) {
+       return str
+     } else {
+       return 'YASMIN ' + str
+     }
+   };
+   console.log(epify('MAHFOUZ')); 
+   console.log(epify('classe')); 
+</script>
+
+<!--ESERCIZIO 6 --> 
+<script>
+   const check3and7 = function (n) {
+     if (n >= 0 && (n % 3 === 0 || n % 7 === 0)) {
+       return true
+     } else {
+       return false
+     }
+   };
+   console.log(check3and7(20));
+</script>
+
+<!--ESERCIZIO 7 --> 
+<script>
+   
+   const reverseString = function (str) {
+     let splitString = str.split('')
+     let reverseString = splitString.reverse()
+     let finalString = reverseString.join('')
+     return finalString
+   };
+   console.log(reverseString('yasmin'));
+</script>
+
+<!--ESERCIZIO 8 --> 
+<script>
+   const upperFirstPhrase = function (str) {
+     let words = str.split(' ')
+     let finalString = []
+     for (let i = 0; i < words.length; i++) {
+       let firstChar = words[i].charAt(0)
+       let uppercaseChar = firstChar.toUpperCase()
+       let cutString = words[i].slice(1)
+       let finalWord = uppercaseChar + cutString
+       finalString.push(finalWord)
+     }
+     console.log(finalString.join(' '))
+   };
+   
+   upperFirstPhrase('salam alakom');
+</script>
+
+<!--ESERCIZIO 9 --> 
+<script>
+   const cutString = function (str) {
+     return str.slice(1, str.length - 1)
+   }
+   console.log(cutString('Yasmin'));
+</script>
+
+<!--ESERCIZIO 10 --> 
+<script>
+   const giveMeRandom = function (n) {
+     const arr = []
+     for (let i = 0; i < n; i++) {
+       arr.push(Math.floor(Math.random() * 10))
+     }
+     return arr
+   };
+   console.log(giveMeRandom(5));
+</script>
+</body>
+</html>
