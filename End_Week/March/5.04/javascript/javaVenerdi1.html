@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compito Venerdi Javascript</title>
+</head>
+<body>
+    <!-- ESERCIZIO 1 -->
+    <script>
+        var codici = new Array();
+        codici[0] = 'dog';
+        codici[1] = 'cat';
+        codici[1] = 'hamster';
+        codici[1] = 'redfish';
+        for (var i = 0; i < 3; i++) {
+        document.write(codici[i] + "<br>");
+        }
+    </script>
+
+    <!-- ESERCIZIO 2 -->
+    <script>
+       /*  let pets = ["p", "e", "t", "s"];  
+        console.log(pets);
+
+        function Sort(arr){
+        return arr.sort((a,b)=>a.localeCompare(b));
+        }; console.log(Sort(pets)); */
+    </script>
+
+    <!-- ESERCIZIO 3 -->
+    <script>
+        /*
+        let pets1 = ["p", "e", "t", "s"];  
+        console.log(pets1);
+
+        function Sort(arr){
+        return arr.sort((a,b)=>b.localeCompare(a));
+        }; console.log(Sort(pets1)); */
+    </script>
+
+    <!-- ESERCIZIO 4 -->
+    <script>
+    /*
+    let pets2 = ["p", "e", "t", "s"];
+    let firstPet2 = pets2.shift(); 
+    pets2.push(firstPet2); 
+    console.log(pets2); */
+    </script>
+
+    <!-- ESERCIZIO 5 -->
+    <script>
+    const cars = [
+  {
+    brand: 'Ford',
+    model: 'Fiesta',
+    color: 'red',
+    trims: ['titanium', 'st', 'active'],
+  },
+  {
+    brand: 'Peugeot',
+    model: '208',
+    color: 'blue',
+    trims: ['allure', 'GT'],
+  },
+  {
+    brand: 'Volkswagen',
+    model: 'Polo',
+    color: 'black',
+    trims: ['life', 'style', 'r-line'],
+  },
+];
+
+  function generateLicensePlate() {
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let numbers = '0123456789';
+  let licensePlate = '';
+  
+  for (let i = 0; i < 3; i++) {
+    licensePlate += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  for (let i = 0; i < 3; i++) {
+    licensePlate += numbers.charAt(Math.floor(Math.random() * numbers.length));
+  }
+  return licensePlate;
+} cars.forEach(car => {
+  car.licensePlate = generateLicensePlate(); 
+});
+
+console.log(cars); 
+    </script>
+
+    <!-- ESERCIZIO 6 -->
+    <script>
+    const newCar = {
+    brand: 'Toyota',
+    model: 'Corolla',
+    color: 'white',
+    trims: ['le', 'se'],
+    licensePlate: generateLicensePlate(),
+    };
+
+    cars.push(newCar);
+    cars.forEach(car => {
+    car.trims.pop();
+    }); console.log(cars);
+    </script>
+
+    <!-- ESERCIZIO 7 -->
+    <script>
+    const justTrims = [];
+    cars.forEach(car => {
+    if (car.trims.length > 0) { // Verifica se l'array "trims" non è vuoto
+    justTrims.push(car.trims[0]); // Aggiunge il primo elemento della proprietà "trims" all'array "justTrims"
+    }
+    }); console.log(justTrims);
+    </script>
+
+    <!-- ESERCIZIO 8 -->
+    <script>
+        cars.forEach(car => {
+        if (car.color.charAt(0).toLowerCase() === 'b') {
+         console.log("Fizz");
+        } else { console.log("Buzz");}
+        });
+    </script>
+
+    <!-- ESERCIZIO 9 -->
+    <script>
+        const numericArray = [6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 313, 321, 105,];
+
+        let index = 0;
+        while (numericArray[index] !== 32 && index < numericArray.length) {
+        console.log(numericArray[index]);
+        index++;}
+    </script>
+
+     <!-- ESERCIZIO 10 -->
+    <script>
+        const charactersArray = ['g', 'n', 'u', 'z', 'd'];
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+        const positionsArray = [];
+
+        charactersArray.forEach(char => {
+        const charLowerCase = char.toLowerCase(); // Assicurati che il carattere sia in minuscolo
+        switch (charLowerCase) {
+            case 'a':
+            positionsArray.push(1);
+            break;
+            case 'b':
+            positionsArray.push(2);
+            break;
+            case 'c':
+            positionsArray.push(3);
+            break;
+            case 'd':
+            positionsArray.push(4);
+            break;
+            case 'e':
+            positionsArray.push(5);
+            break;
+            case 'f':
+            positionsArray.push(6);
+            break;
+            case 'g':
+            positionsArray.push(7);
+            break;
+            case 'h':
+            positionsArray.push(8);
+            break;
+            case 'i':
+            positionsArray.push(9);
+            break;
+            case 'j':
+            positionsArray.push(10);
+            break;
+            case 'k':
+            positionsArray.push(11);
+            break;
+            case 'l':
+            positionsArray.push(12);
+            break;
+            case 'm':
+            positionsArray.push(13);
+            break;
+            case 'n':
+            positionsArray.push(14);
+            break;
+            case 'o':
+            positionsArray.push(15);
+            break;
+            case 'p':
+            positionsArray.push(16);
+            break;
+            case 'q':
+            positionsArray.push(17);
+            break;
+            case 'r':
+            positionsArray.push(18);
+            break;
+            case 's':
+            positionsArray.push(19);
+            break;
+            case 't':
+            positionsArray.push(20);
+            break;
+            case 'u':
+            positionsArray.push(21);
+            break;
+            case 'v':
+            positionsArray.push(22);
+            break;
+            case 'w':
+            positionsArray.push(23);
+            break;
+            case 'x':
+            positionsArray.push(24);
+            break;
+            case 'y':
+            positionsArray.push(25);
+            break;
+            case 'z':
+            positionsArray.push(26);
+            break;
+            default:positionsArray.push(-1);}});
+
+        console.log(positionsArray);
+    </script>
+</body>
+</html>
