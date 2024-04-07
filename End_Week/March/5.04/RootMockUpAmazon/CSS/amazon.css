@@ -41,7 +41,7 @@ main{
     text-decoration-line: none;
 }
 #p_verde{
-    background-image: url("bg-image.png");
+    background-image: url("/images/bg-image.png");
     color: white;
     padding: 5%;
 }
