@@ -8,21 +8,15 @@
 <body>
     <!-- ESERCIZIO 1 -->
     <script>
-        var codici = new Array();
-        codici[0] = 'dog';
-        codici[1] = 'cat';
-        codici[1] = 'hamster';
-        codici[1] = 'redfish';
-        for (var i = 0; i < 3; i++) {
-        document.write(codici[i] + "<br>");
-        }
+        const pets = ['dog', 'cat', 'hamster', 'redfish'];
+        document.write(pets[0] + "<br>");
+        document.write(pets[1] + "<br>");
+        document.write(pets[2] + "<br>");
+        document.write(pets[3] + "<br>");
     </script>
 
     <!-- ESERCIZIO 2 -->
     <script>
-       /*  let pets = ["p", "e", "t", "s"];  
-        console.log(pets);
-
         function Sort(arr){
         return arr.sort((a,b)=>a.localeCompare(b));
         }; console.log(Sort(pets)); */
@@ -30,22 +24,16 @@
 
     <!-- ESERCIZIO 3 -->
     <script>
-        /*
-        let pets1 = ["p", "e", "t", "s"];  
-        console.log(pets1);
-
         function Sort(arr){
         return arr.sort((a,b)=>b.localeCompare(a));
-        }; console.log(Sort(pets1)); */
+        }; console.log(Sort(pets));
     </script>
 
     <!-- ESERCIZIO 4 -->
     <script>
-    /*
-    let pets2 = ["p", "e", "t", "s"];
-    let firstPet2 = pets2.shift(); 
-    pets2.push(firstPet2); 
-    console.log(pets2); */
+    pets.shift(pets[0]);
+    pets.push("dog"); 
+    console.log(pets); 
     </script>
 
     <!-- ESERCIZIO 5 -->
