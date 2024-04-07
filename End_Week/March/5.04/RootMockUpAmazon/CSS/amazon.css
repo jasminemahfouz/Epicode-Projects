@@ -1,0 +1,87 @@
+body{
+    background-color: rgb(232, 235, 236);
+}
+/*  Header  */
+#div_header {
+    background-color: rgb(26, 35, 48);
+}
+img {
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    width: 9%;
+    height: 8%;
+}
+#p_header {
+    background-color: rgb(41, 55, 69);
+    color: white;
+    padding: 0.7%;
+}
+#p_header span a {
+    color: white;
+    text-decoration-line: none;
+}
+
+/* Main */
+main{
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#p_main1{
+    background-color: rgb(228, 111, 44);
+    color: white;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+#p_main1 a {
+    color: white;
+    text-decoration-line: none;
+}
+#p_verde{
+    background-image: url("bg-image.png");
+    color: white;
+    padding: 5%;
+}
+#div4_img{
+    background-color: white;
+    margin: 3%;
+    text-align: left;
+}
+#div4_img img{
+    float: left;
+    width:  300px;
+    height: 300px;
+    border-radius: 10%;
+}
+.img{
+    width:  95%;
+    margin-bottom: 0%;
+}
+section p{
+    margin-top: 0%;
+    margin-bottom: 1%;
+}
+section a {
+    color: blue;
+    text-decoration-line: none;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    background-color: rgb(41, 55, 69);
+}
+footer p {
+    background-color: rgb(41, 55, 69);
+    color: white;
+    padding: 0.7%;
+}
+footer a {
+    color: white;
+}
+footer img{
+    width: 10%;
+    padding: 1%;
+}
