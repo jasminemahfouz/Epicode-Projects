@@ -97,20 +97,23 @@
        Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
     */
 
-      const changeTitle = function(newTitle) {
-      document.title = newTitle;
-      };
-      changeTitle("Nuovo Titolo della Pagina");
+      const changeTitle = function () {
+        const title = document.querySelector('h1')
+        title.innerText = 'new title'
+      }
+
+      changeTitle()
 
       /* ESERCIZIO 2
        Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
     */
 
-      const addClassToTitle = function(className) {
-      const titleElement = document.querySelector("title");
-      if (titleElement) {
-          titleElement.classList.add(className);
-      }}; addClassToTitle("myHeading");
+      const addClassToTitle = function () {
+        const title = document.querySelector('h1')
+        title.classList.remove('myClass')
+        title.classList.add('myHeading')
+      }
+      addClassToTitle()
 
       /* ESERCIZIO 3
        Scrivi una funzione per che cambi il testo dei p figli di un div
@@ -224,59 +227,56 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-      const generateTable = function () {
-        const container = document.getElementById('tableArea')
-        const table = document.createElement('table')
-        table.style.width = '100%'
+          const createTable = function () {
+          // Seleziona l'elemento con id "tableArea"
+          const tableArea = document.getElementById("tableArea");
 
-        const firstRow = document.createElement('tr')
+          // Crea una tabella
+          const table = document.createElement("table");
 
-        const thImage = document.createElement('th')
-        thImage.innerText = 'Immagine'
-        const thProduct = document.createElement('th')
-        thProduct.innerText = 'Prodotto'
-        const thQuantity = document.createElement('th')
-        thQuantity.innerText = 'Quantità'
-        const thPrice = document.createElement('th')
-        thPrice.innerText = 'Prezzo'
+          // Crea l'intestazione della tabella
+          const headerRow = document.createElement("tr");
+          const headers = ["Immagine", "Nome Prodotto", "Quantità", "Prezzo"];
+          headers.forEach(headerText => {
+              const header = document.createElement("th");
+              header.textContent = headerText;
+              headerRow.appendChild(header);
+          });
+          table.appendChild(headerRow);
 
-        const images = [
-          'https://m.media-amazon.com/images/I/81yJf4K+L1L._AC_SY450_.jpg',
-          'https://m.media-amazon.com/images/I/61MRTh9xotL._AC_SX679_.jpg',
-          'https://www.tradeinn.com/f/13805/138054505/samsung-smartphone-galaxy-s21-5g-8gb-128gb-6.2.jpg',
-          'https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1661333885.70133010!500x500.png',
-          'https://tomatosmartphone.it/wp-content/uploads/2022/06/EU-IN_Green.png',
-        ]
+          // Dati di esempio per riempire la tabella
+          const products = [
+              { image: "image1.jpg", name: "Prodotto 1", quantity: 10, price: 50 },
+              { image: "image2.jpg", name: "Prodotto 2", quantity: 15, price: 70 },
+              { image: "image3.jpg", name: "Prodotto 3", quantity: 20, price: 100 },
+              { image: "image4.jpg", name: "Prodotto 4", quantity: 12, price: 60 },
+              { image: "image5.jpg", name: "Prodotto 5", quantity: 8, price: 40 }
+          ];
 
-        firstRow.appendChild(thImage)
-        firstRow.appendChild(thProduct)
-        firstRow.appendChild(thQuantity)
-        firstRow.appendChild(thPrice)
-        table.appendChild(firstRow)
+          // Crea le righe della tabella con i dati dei prodotti
+          products.forEach(product => {
+              const row = document.createElement("tr");
+              for (const key in product) {
+                  const cell = document.createElement("td");
+                  if (key === "image") {
+                      const img = document.createElement("img");
+                      img.src = product[key];
+                      img.alt = "Image";
+                      cell.appendChild(img);
+                  } else {
+                      cell.textContent = product[key];
+                  }
+                  row.appendChild(cell);
+              }
+              table.appendChild(row);
+          });
 
-        for (let i = 0; i < images.length; i++) {
-          const newRow = document.createElement('tr')
+          // Aggiungi la tabella all'elemento "tableArea"
+          tableArea.appendChild(table);
+      };
 
-          const tdImage = document.createElement('td')
-          tdImage.innerHTML = `<img src=${images[i]} alt="smartphone" height="200" />`
-          const tdProduct = document.createElement('td')
-          tdProduct.innerText = 'Smartphone'
-          const tdQuantity = document.createElement('td')
-          tdQuantity.innerText = Math.floor(Math.random() * 50)
-          const tdPrice = document.createElement('td')
-          tdPrice.innerText = Math.floor(Math.random() * 500) + '€'
-
-          newRow.appendChild(tdImage)
-          newRow.appendChild(tdProduct)
-          newRow.appendChild(tdQuantity)
-          newRow.appendChild(tdPrice)
-          table.appendChild(newRow)
-        }
-
-        container.appendChild(table)
-      }
-
-      generateTable()
+      // Chiamata alla funzione per creare la tabella
+      createTable();
 
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
@@ -327,19 +327,21 @@
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
 
-      const changeColorWithRandom = function () {
-        let elementToChange = document.getElementById('changeMyColor')
-        elementToChange.onclick = function () {
-          const red = Math.round(Math.random() * 255)
-          const green = Math.round(Math.random() * 255)
-          const blue = Math.round(Math.random() * 255)
+        const changeColorWithRandom = function () {
+        // Seleziona l'elemento h2 con id "changeMyColor"
+        const title = document.getElementById("changeMyColor");
 
-          const randomColor = `rgb(${red},${green},${blue})`
-          elementToChange.style.userSelect = 'none' // elimina la possibilità di selezionare il testo, per non nasconderne il colore
-          elementToChange.style.cursor = 'pointer' // cursore a puntatore
-          elementToChange.style.color = randomColor
-        }
-      }
+        // Genera tre numeri casuali tra 0 e 255 per rappresentare i valori RGB
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        // Crea una stringa CSS per il colore utilizzando i valori RGB generati
+        const randomColor = `rgb(${r}, ${g}, ${b})`;
+
+        // Assegna il colore casuale al titolo h2
+        title.style.color = randomColor;
+        };
 
       changeColorWithRandom()
     </script>
