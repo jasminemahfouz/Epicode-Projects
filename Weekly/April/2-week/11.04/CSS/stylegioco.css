@@ -1,0 +1,49 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:linear-gradient(180deg, red, yellow);
+    text-align: center;
+  }
+
+  button {
+    background-color: palevioletred;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: pink;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  td {
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #fff;
+  }
+
+  .highlight {
+    background-color: #ffc107; /* Yellow */
+  }
