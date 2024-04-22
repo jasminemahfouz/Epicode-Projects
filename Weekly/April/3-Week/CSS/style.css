@@ -274,6 +274,13 @@ footer a {
     iframe{
         height: 150px;
     }
+      input{
+        width: 300px;
+    }
+    button{
+        width: 100px;
+        height: 30px;
+    }
     footer{
         font-size: 1.9rem;
     }
