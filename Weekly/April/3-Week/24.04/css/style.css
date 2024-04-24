@@ -1,0 +1,88 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+h1, h2{
+    color: rgb(93, 42, 6);
+    font-size: 3em;
+}
+article{
+    margin: 10px;
+}
+nav{
+    background-color: rgb(250, 247, 229);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 5px;
+    font-size: 12px;
+}
+nav ul li{
+    margin: 5px;
+    background-color: rgb(240, 223, 145);
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    color: rgb(93, 42, 6);
+}
+nav ul li:hover {
+    transform: scale(1.2); /* Scale up by 20% */
+}
+nav img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+ article #product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 340px;
+    background-color:rgb(250, 247, 229);
+    border-radius: 30px;
+    flex-grow: 1;
+    color: rgb(93, 42, 6);
+}
+article #product p{
+    display: flex;
+
+}
+article div img{
+    width: 250px;
+    height: 170px;
+    border-radius: 30px 30px 0 0;
+}
+article #product button{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(240, 223, 145);
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+}
+section{
+    background-color: rgb(250, 247, 229);
+    color: rgb(93, 42, 6);
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 50px;
+}
+section img{
+    width: 300px;
+    height: 200px;
+}
+#img img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
