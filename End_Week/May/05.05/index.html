@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        :root {
+  --black: #060606;
+}
+            html, body {
+                background-color: var(--black);
+}
+
+.nav-link,
+.nav-link:hover {
+    color: #fff; 
+}
+
+.card {
+    width: 200px;
+    margin: 10px;
+}
+
+.list-unstyled li a {
+    text-decoration: none;
+    color: white;
+}
+
+.custom-flex {
+    display: flex;
+    align-items: center;
+}
+
+.tv-shows {
+    font-size: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-container {
+    flex-shrink: 0;
+}
+
+.dropdown-toggle.custom-btn {
+    background-color: #000;
+    color: white;
+    border: 1px solid white;
+}
+
+.follow-icon {
+    font-size: 14px;
+}
+    </style>
+</head>
+<body class="btn-dark">
+<header class="p-3">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" class="img-fluid" style="max-width: 150px;">
+                <ul class="nav ml-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recently Added</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My List</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">KIDS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profilepage.html"><i class="fas fa-user"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-md-6">
+                <div class="custom-flex align-items-center mt-2">
+                    <span class="mr-2 h3 tv-shows">TV Shows</span>             
+                    <div class="dropdown">
+                        <button class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle custom-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Genres
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Drama</a>
+                            <a class="dropdown-item" href="#">Comedy</a>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Fantasy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container mt-5">
+    <h2>Trending Now</h2>
+    <div class="row no-gutters">
+        <div class="col-md-12">
+            <div class="d-flex flex-nowrap" id="movieContainer">
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media0.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media1.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media2.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media3.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media4.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media5.webp" class="card-img-top" alt="...">
+                </div>
+                 <div class="card m-2" style="width: 200px; position: relative;">
+                    <img src="/assets/img/media/media6.jpg" class="card-img-top" alt="...">
+                    <button class="btn btn-transparent" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" onclick="toggleAdditionalCards()">
+                        <i class="fas fa-chevron-right" style="color: rgba(255, 255, 255, 0.7);"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2>Watch It Again</h2>
+    <div class="row no-gutters">
+        <div class="col-md-12">
+            <div class="d-flex flex-nowrap" id="movieContainer">
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media7.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media8.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media9.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media10.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media11.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media12.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px; position: relative;">
+                    <img src="/assets/img/media/media13.jpg" class="card-img-top" alt="...">
+                    <!-- Button for scrolling -->
+                    <button class="btn btn-transparent" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" onclick="toggleAdditionalCards()">
+                        <i class="fas fa-chevron-right" style="color: rgba(255, 255, 255, 0.7);"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2>New Releases</h2>
+    <div class="row no-gutters">
+        <div class="col-md-12">
+            <div class="d-flex flex-nowrap" id="movieContainer">
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media14.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media15.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media16.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media17.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media18.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px;">
+                    <img src="/assets/img/media/media19.webp" class="card-img-top" alt="...">
+                </div>
+                <div class="card m-2" style="width: 200px; position: relative;">
+                    <img src="/assets/img/media/media20.jpg" class="card-img-top" alt="...">
+                    <button class="btn btn-transparent" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" onclick="toggleAdditionalCards()">
+                        <i class="fas fa-chevron-right" style="color: rgba(255, 255, 255, 0.7);"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="text-light py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-2 mb-3 my-0">
+                <ul class="list-unstyled d-flex">
+                    <li class="mr-3"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="mr-3"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><a href="#">Audio and Subtitles</a></li>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><button class="btn btn-sm btn-outline-light btn-transparent">Service Code</button></li>
+                    <li><a href="#">&copy; Netflix</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 mb-3 my-0">
+                <ul class="list-unstyled">
+                    <li><a href="#">Audio Description</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Legal Notices</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 mb-3 my-0">
+                <ul class="list-unstyled">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 mb-3 my-0">
+                <ul class="list-unstyled">
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</footer>
+<style>
+    .follow-icon {
+        font-size: 14px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script>
+  function toggleAdditionalCards() {
+        const additionalCards = document.getElementById("additionalCards");
+        const movieContainer = document.getElementById("movieContainer");
+        
+        movieContainer.innerHTML = additionalCards.innerHTML;
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
