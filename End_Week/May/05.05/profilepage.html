@@ -9,38 +9,79 @@
     <style>
         :root {
             --black: #171616; 
+            --gray: #343434;
+            --dark-gray: #252525;
+            --light-gray: #9e9e9e;
+            --white: #ffffff;
+            --font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         
         html, body {
             background-color: var(--black);
-            color: white;
+            color: var(--white);
+            font-family: var(--font-family);
         }
 
         .profile-image {
             width: 100px;
             height: 100px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 10%;
         }
 
         .divider {
-            border-top: 1px solid #ced4da;
+            border-top: 1px solid var(--light-gray);
             margin-top: 20px;
             margin-bottom: 20px;
         }
-        .centered-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
-            height: 100%;
-        }
+
         .hr-half {
             height: 1px;
-            background-color: white;
-            width: 60%; 
+            background-color: var(--white);
+            width: 65%; 
             margin-left: auto;
             margin-right: 0px;
+        }
+
+        .btn-edit {
+            background-color: var(--black);
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-edit:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        .btn-action {
+            background-color: var(--black);
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-action:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        .btn-language {
+            background-color: var(--black);
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-language:hover {
+            background-color: var(--gray);
+            color: var(--black);
+        }
+
+        .maturity-settings {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -62,36 +103,31 @@
                 <hr class="bg-white">
                 <div class="row">
                     <div class="col-md-4">
-                        <!-- Immagine profilo -->
                         <img src="/assets/img/icons/avatar.png" alt="Profile Image" class="profile-image">
                     </div>
                     <div class="col-md-8">
-                        <!-- Input per il nome -->
                         <div class="form-group">
                             <label for="fullName"></label>
                             <input type="text" class="form-control" id="fullName" placeholder="username">
                         </div>
-                        <!-- Selezione della lingua -->
                         <div class="form-group">
                             <label for="language">Language:</label>
-                            <select class="form-control" id="language">
+                            <select class="form-control btn-language" id="language">
                                 <option value="en">English</option>
                                 <option value="es">Spanish</option>
                                 <option value="fr">French</option>
-                                <!-- Aggiungi altre opzioni qui -->
                             </select>
                         </div>
                     </div>
                 </div>
                 <hr class="hr-half">
-                <!-- Posiziona "Maturity Settings" al centro destro -->
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="col-md-12 offset-md-7">
+                    <div class="col-md-8 offset-md-4">
+                        <div class="centered-content">
                             <h4>Maturity Settings</h4>
-                            <p>All Maturity Ratings</p>
+                            <p class="maturity-settings">All Maturity Ratings</p>
                             <p>Show titles of all maturity ratings for this profile</p>
-                            <button class="btn btn-dark btn-sm">Edit</button>
+                            <button class="btn btn-edit btn-sm">Edit</button>
                         </div>
                     </div>
                 </div>
@@ -102,25 +138,22 @@
                         <input type="checkbox" class="form-check-input" id="autoplayCheckbox">
                         <label class="form-check-label" for="autoplayCheckbox">Autoplay next episode in a series on all devices.</label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check" >
                         <input type="checkbox" class="form-check-input" id="autoplayCheckbox">
                         <label class="form-check-label" for="autoplayCheckbox">Autoplay previews while browsing on all devices.</label>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="text-center">
-                    <button class="btn btn-dark  mr-2">Save</button>
-                    <button class="btn btn-dark mr-2">Edit</button>
-                    <button class="btn btn-dark ">Cancel Profile</button>
+                    <button class="btn btn-action  mr-2">Save</button>
+                    <button class="btn btn-action mr-2">Edit</button>
+                    <button class="btn btn-action">Cancel Profile</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Link al JS di Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
