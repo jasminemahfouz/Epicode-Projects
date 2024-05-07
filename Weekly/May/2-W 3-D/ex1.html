@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<title>Registrazione Utente</title>
+<style>
+     body {
+        background-color: #000;
+        color: #fff;
+    }
+    .container {
+        margin-top: 50px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+
+    #savedName {
+        margin-bottom: 10px;
+    }
+    .card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+
+<div>
+    <div class="container">
+        <div class="card bg-dark">
+            <div class="card-body">
+                <h2 class="card-title text-white mb-5">Registrazione Utente</h2>
+                <div class="text-white" id="savedName"></div>
+                <div class="form-group mb-5">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Inserisci il tuo nome">
+                </div>
+                <button class="btn btn-primary" onclick="saveName()">Salva</button>
+                <button class="btn btn-danger" onclick="removeName()">Rimuovi</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Funzione per salvare il nome in localStorage
+    function saveName() {
+        const name = document.getElementById("nameInput").value;
+        localStorage.setItem("userName", name);
+        updateSavedName();
+    }
+
+    // Funzione per rimuovere il nome da localStorage
+    function removeName() {
+        localStorage.removeItem("userName");
+        updateSavedName();
+    }
+
+    // Funzione per mostrare il nome precedentemente salvato sopra l'input field
+    function updateSavedName() {
+        const savedNameDiv = document.getElementById("savedName");
+        const savedName = localStorage.getItem("userName");
+        if (savedName) {
+            savedNameDiv.textContent = "Nome salvato: " + savedName;
+        } else {
+            savedNameDiv.textContent = "";
+        }
+    }
+
+    // Inizializza il form mostrando il nome precedentemente salvato, se presente
+    window.onload = () => {
+        updateSavedName();
+    };
+</script>
+
+</body>
+</html>
