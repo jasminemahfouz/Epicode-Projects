@@ -23,7 +23,6 @@
 </div>
 
 <script>
-    // Funzione per avviare il contatore
     function startCounter() {
         const startTime = sessionStorage.getItem("startTime");
         if (!startTime) {
@@ -31,18 +30,16 @@
             sessionStorage.setItem("startTime", currentTime);
         }
         updateCounter();
-        setInterval(updateCounter, 1000); // Aggiorna il contatore ogni secondo
+        setInterval(updateCounter, 1000);
     }
 
-    // Funzione per aggiornare il valore del contatore
     function updateCounter() {
         const startTime = parseInt(sessionStorage.getItem("startTime"));
         const currentTime = Date.now();
-        const elapsedTime = Math.floor((currentTime - startTime) / 1000); // Converti in secondi
+        const elapsedTime = Math.floor((currentTime - startTime) / 1000); 
         document.getElementById("counter").textContent = elapsedTime;
     }
 
-    // Avvia il contatore quando la pagina si carica
     window.onload = () => {
         startCounter();
     };
