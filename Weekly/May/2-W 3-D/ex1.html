@@ -45,20 +45,16 @@
     </div>
 
 <script>
-    // Funzione per salvare il nome in localStorage
     function saveName() {
         const name = document.getElementById("nameInput").value;
         localStorage.setItem("userName", name);
         updateSavedName();
     }
 
-    // Funzione per rimuovere il nome da localStorage
     function removeName() {
         localStorage.removeItem("userName");
         updateSavedName();
     }
-
-    // Funzione per mostrare il nome precedentemente salvato sopra l'input field
     function updateSavedName() {
         const savedNameDiv = document.getElementById("savedName");
         const savedName = localStorage.getItem("userName");
@@ -69,7 +65,6 @@
         }
     }
 
-    // Inizializza il form mostrando il nome precedentemente salvato, se presente
     window.onload = () => {
         updateSavedName();
     };
