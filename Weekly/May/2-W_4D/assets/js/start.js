@@ -11,7 +11,7 @@ document.getElementById("loadImages").addEventListener("click", function() {
 
     fetch(`https://api.pexels.com/v1/search?query=${query}`, {
       headers: {
-        Authorization: `Bearer ${apiKey}`
+        Authorization: `dQUFPMYVJJ1rAfF2seMYLq6ePtIjmf6pRJsuUG2pWN6g8p7eMJZI3DdA`
       }
     })
     .then((response) => {
