@@ -53,7 +53,7 @@ const deleteEvent = function () {
     })
 }
 
-const editButton = document.getElementById('btn-modify')
+const editButton = document.getElementById('edit-button')
 editButton.addEventListener('click', function () {
   location.assign(`/exam/backoffice.html?eventId=${eventId}`)
 })
