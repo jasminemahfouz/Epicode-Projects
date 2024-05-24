@@ -1,12 +1,10 @@
-
-
+<!-- ho modificato questo dopo la consegna perchè nella riunuine hanno citato che si dovevano metter ei bottoni di cui mi ero completamente dimenticata -->
 <div class="container d-flex justify-content-center">
-  <h1 class="floating-header mt-3 text-secondary">Macchine in Evidenza</h1>
+  <h1 class="floating-header mt-3 text-secondary">Tutto</h1>
 </div>
 
-
 <div class="row justify-content-center">
-  <div class="col-md-3 mb-8" *ngFor="let car of featuredCars">
+  <div class="col-md-3 mb-8" *ngFor="let car of allCars">
     <div class="card" [ngClass]="{ 'card-available': car.available, 'card-unavailable': !car.available }">
       <div class="card-body">
         <img [src]="car.modelImage" class="card-img-top" alt="Car Image">
@@ -17,7 +15,29 @@
         <div [ngClass]="{ 'text-success': car.available, 'text-danger': !car.available }">
           {{ car.available ? 'Disponibile' : 'Non disponibile' }}
         </div>
+        <button (click)="navigateToBrandPage(car.brand)" class="btn btn-primary mt-3">Vai alla pagina del brand</button>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container d-flex justify-content-center">
+  <h1 class="floating-header mt-3 text-secondary">In EVIDENZA</h1>
+</div>
+  <div class="row justify-content-center">
+    <div class="col-md-3 mb-8 mb-5" *ngFor="let car of randomCars">
+      <div class="card" [ngClass]="{ 'card-available': car.available, 'card-unavailable': !car.available }">
+        <div class="card-body">
+          <img [src]="car.modelImage" class="card-img-top" alt="Car Image">
+          <h5 class="card-title">{{ car.brand }}</h5>
+          <p class="card-text">Modello: {{ car.model }}</p>
+          <p class="card-text">Anno: {{ car.year }}</p>
+          <p class="card-text">Prezzo: ${{ car.price }}</p>
+          <div [ngClass]="{ 'text-success': car.available, 'text-danger': !car.available }">
+            {{ car.available ? 'Disponibile' : 'Non disponibile' }}
+          </div>
+          <button (click)="navigateToBrandPage(car.brand)" class="btn btn-primary mt-3">Vai alla pagina del brand</button>
+        </div>
+      </div>
+    </div>
+  </div>
