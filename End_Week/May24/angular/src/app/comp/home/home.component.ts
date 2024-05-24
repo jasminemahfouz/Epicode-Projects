@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { iCars } from '../../modules/cars';
 
 @Component({
@@ -8,21 +9,34 @@ import { iCars } from '../../modules/cars';
 })
 export class HomeComponent implements OnInit {
 
-  featuredCars: iCars[] = [];
+  allCars: iCars[] = [];
+  randomCars: iCars[] = [];
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.getFeaturedCars();
+    this.getAllCars();
   }
 
-  async getFeaturedCars() {
+  async getAllCars() {
     const res = await fetch('../../../assets/db.json');
-    const cars: iCars[] = await res.json();
-    
-    // Ordina le auto per prezzo in modo decrescente
-    const sortedCars = cars.sort((a, b) => b.price - a.price);
-
-    // Seleziona le prime due auto come macchine in evidenza
-    this.featuredCars = sortedCars.slice(0, 2);
+    this.allCars = await res.json();
+    this.selectRandomCars();
   }
 
+  navigateToBrandPage(brand: string) {
+    const brandPath = brand.toLowerCase();
+    this.router.navigate([`/brands/${brandPath}`]);
+  }
+
+  selectRandomCars() {
+    const randomIndices: number[] = [];
+    while (randomIndices.length < 2) {
+      const randomIndex = Math.floor(Math.random() * this.allCars.length);
+      if (!randomIndices.includes(randomIndex)) {
+        randomIndices.push(randomIndex);
+      }
+    }
+    this.randomCars = randomIndices.map(index => this.allCars[index]);
+  }
 }
