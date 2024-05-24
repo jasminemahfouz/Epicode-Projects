@@ -15,7 +15,7 @@
         <div [ngClass]="{ 'text-success': car.available, 'text-danger': !car.available }">
           {{ car.available ? 'Disponibile' : 'Non disponibile' }}
         </div>
-        <button (click)="navigateToBrandPage(car.brand)" class="btn btn-primary mt-3">Vai alla pagina del brand</button>
+        <a [routerLink]="['/', car.brand.toLowerCase()]" class="btn btn-primary mt-3">Vai alla pagina del brand</a>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
           <div [ngClass]="{ 'text-success': car.available, 'text-danger': !car.available }">
             {{ car.available ? 'Disponibile' : 'Non disponibile' }}
           </div>
-          <button (click)="navigateToBrandPage(car.brand)" class="btn btn-primary mt-3">Vai alla pagina del brand</button>
+          <a [routerLink]="['/', car.brand.toLowerCase()]" class="btn btn-primary mt-3">Vai alla pagina del brand</a>
         </div>
       </div>
     </div>
