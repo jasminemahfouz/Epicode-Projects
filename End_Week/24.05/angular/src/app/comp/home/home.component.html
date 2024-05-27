@@ -1,0 +1,23 @@
+
+
+<div class="container d-flex justify-content-center">
+  <h1 class="floating-header mt-3 text-secondary">Macchine in Evidenza</h1>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-md-3 mb-8" *ngFor="let car of featuredCars">
+    <div class="card" [ngClass]="{ 'card-available': car.available, 'card-unavailable': !car.available }">
+      <div class="card-body">
+        <img [src]="car.modelImage" class="card-img-top" alt="Car Image">
+        <h5 class="card-title">{{ car.brand }}</h5>
+        <p class="card-text">Modello: {{ car.model }}</p>
+        <p class="card-text">Anno: {{ car.year }}</p>
+        <p class="card-text">Prezzo: ${{ car.price }}</p>
+        <div [ngClass]="{ 'text-success': car.available, 'text-danger': !car.available }">
+          {{ car.available ? 'Disponibile' : 'Non disponibile' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

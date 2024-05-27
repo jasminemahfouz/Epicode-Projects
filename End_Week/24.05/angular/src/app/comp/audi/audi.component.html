@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-auto">
+      <img *ngIf="audiArray.length > 0" [src]="audiArray[0].brandLogo" alt="Logo" class="fiatlogo img-fluid"> 
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <div class="col-md-4">
+      <hr>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-3 mb-8" *ngFor="let car of audiArray">
+    <div class="card" [ngClass]="{ 'card-available': car.available, 'card-unavailable': !car.available }">
+      <div class="card-body">
+        <img [src]="car.modelImage" class="card-img-top" alt="Car Image">
+        <h5 class="card-title">{{ car.brand }}</h5>
+        <p class="card-text">Modello: {{ car.model }}</p>
+        <p class="card-text">Anno: {{ car.year }}</p>
+        <p class="card-text">Prezzo: ${{ car.price }}</p>
+        <div [ngClass]="{ 'text-success': car.available, 'text-danger': !car.available }">
+          {{ car.available ? 'Disponibile' : 'Non disponibile' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
