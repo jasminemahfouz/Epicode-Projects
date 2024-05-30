@@ -1,0 +1,8 @@
+<div class="d-flex my-5">
+  <div class="w-75 container d-flex flex-wrap gap-3 justify-content-evenly">
+    <app-single-product [product]="prod" *ngFor="let prod of products"></app-single-product>
+  </div>
+  <div class="w-25">
+    <app-cart></app-cart>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container my-5">
+  <h1>Preferiti</h1>
+  <h2 *ngIf="favs.length === 0">Non ci sono preferiti</h2>
+<div class="card mb-3" style="max-width: 540px;" *ngFor="let fav of favs">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{fav.thumbnail}}" class="img-fluid rounded-start" alt="{{fav.id}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{fav.title}}</h5>
+        <p class="card-text">{{fav.description}}</p>
+        <button class="btn btn-danger" (click)="removeFromFav(fav.id)"><i class="bi bi-heartbreak"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
