@@ -1,0 +1,23 @@
+.card {
+    background-color: #f0f0f0; /* Colore di sfondo grigio predefinito */
+    transition: background-color 0.3s ease; /* Transizione del colore di sfondo */
+  }
+
+  .card:hover {
+    background-color: #f5e6ff; /* Colore di sfondo viola chiaro all'hover */
+  }
+  .pending {
+    background-color: #ffcccc; /* Sfondo rosso per i todo pendenti */
+  }
+
+  .completed {
+    background-color: #ccccff; /* Sfondo viola per i todo completati */
+  }
+  h1{
+    color: white;
+  }
+
+  .btn{
+    background-color: transparent;
+    border: solid 3px gre;
+  }

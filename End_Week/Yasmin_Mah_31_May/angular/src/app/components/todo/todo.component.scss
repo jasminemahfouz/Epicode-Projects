@@ -1,0 +1,21 @@
+@keyframes rotateAnimation {
+    0% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    100% { transform: rotate(2deg); }
+  }
+
+  .card {
+    animation: rotateAnimation 5s infinite alternate; /* Applica l'animazione di rotazione */ /* Sfondo grigio di default */
+    transition: background-color 0.3s ease; /* Transizione per il cambio di colore */
+  }
+
+  .card:hover {
+    background-color: #e83f3f; /* Cambia il colore dello sfondo al passaggio del mouse */
+  }
+  h1{
+    color: white;
+  }
+  .btn{
+    background-color: transparent;
+    border: solid 3px green($color: #000000);
+  }

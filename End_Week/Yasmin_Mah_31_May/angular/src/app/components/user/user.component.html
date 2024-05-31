@@ -1,0 +1,31 @@
+<div class="container">
+    <h1 class="text-center">Users List</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <button routerLink="/" type="button" class="btn btn-secondary custom-btn me-2">home</button>
+            <button routerLink="/completed" type="button" class="btn btn-secondary custom-btn me-3">completed</button>
+            <button routerLink="/uncompleted" type="button" class="btn btn-secondary custom-btn">uncompleted</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6 offset-md-3">
+            <input type="text" class="form-control" [(ngModel)]="searchQuery" (input)="filterUsers()" placeholder="Search by user">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4" *ngFor="let user of filteredUsers">
+            <div class="card mb-3 custom-card">
+                <img [src]="user.image" alt="{{ user.firstName }}" class="card-img-top img-thumbnail" style="width: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+                    <p class="card-text">{{ user.title }}</p>
+                    <ul class="list-group">
+                        <li *ngFor="let todo of getUserTodos(user.id)" class="list-group-item" [ngClass]="{'pending': !todo.completed, 'completed': todo.completed}">
+                            {{ todo.todo }} - <span [ngClass]="{'completed': todo.completed, 'pending': !todo.completed}">{{ todo.completed ? 'Completed' : 'Pending' }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

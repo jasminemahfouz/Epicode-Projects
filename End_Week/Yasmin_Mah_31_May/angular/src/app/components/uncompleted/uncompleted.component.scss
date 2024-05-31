@@ -1,0 +1,11 @@
+.card:hover {
+    background-color: #a98686; /* Cambia il colore dello sfondo al passaggio del mouse */
+    transition: background-color 0.3s ease; /* Aggiunge una transizione fluida per un effetto più piacevole */
+}
+h1{
+    color: white;
+  }
+  .btn{
+    background-color: transparent;
+    border: solid 3px green($color: #000000);
+  }
