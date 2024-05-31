@@ -1,14 +1,14 @@
 .list-group-item.completed {
-    background-color: #f0f0f0; /* Sfondo grigio di default */
-    transition: background-color 0.3s ease; /* Transizione per il cambio di colore */
+    background-color: #f0f0f0; 
+    transition: background-color 0.3s ease;
   }
 
   .list-group-item.completed:hover {
-    background-color: #e0e0e0; /* Cambia il colore dello sfondo al passaggio del mouse */
+    background-color: #e0e0e0; 
   }
   .card:hover {
-    background-color: #a288b9; /* Cambia il colore dello sfondo al passaggio del mouse */
-    transition: background-color 0.3s ease; /* Aggiunge una transizione fluida per un effetto più piacevole */
+    background-color: #a288b9; 
+    transition: background-color 0.3s ease; 
 }
 h1{
     color: white;

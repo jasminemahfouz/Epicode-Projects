@@ -5,12 +5,12 @@
   }
 
   .card {
-    animation: rotateAnimation 5s infinite alternate; /* Applica l'animazione di rotazione */ /* Sfondo grigio di default */
-    transition: background-color 0.3s ease; /* Transizione per il cambio di colore */
+    animation: rotateAnimation 5s infinite alternate;
+    transition: background-color 0.3s ease; 
   }
 
   .card:hover {
-    background-color: #e83f3f; /* Cambia il colore dello sfondo al passaggio del mouse */
+    background-color: #e83f3f; 
   }
   h1{
     color: white;
