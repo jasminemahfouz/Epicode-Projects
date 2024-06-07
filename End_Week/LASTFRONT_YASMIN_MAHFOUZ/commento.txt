@@ -1,1 +1,2 @@
-ho provato a fare un server.js che lascio giusto per poterlo rivedere piu avanti. 
+il file server.js che ho commentato lo lascio giusto per poterlo rivedere piu avanti. Ho provato un approccio diverso all'inizio, 
+poi per non rischiare di perdere tempo ho cambiato e optato per il solito approcio durante le lezioni.
