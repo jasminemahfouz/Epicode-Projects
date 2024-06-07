@@ -1,0 +1,136 @@
+{
+  "users": [
+    {
+      "email": "user1@example.com",
+      "password": "$2a$10$XyFJ1M8JKccbv6064jFCVO1R7OMzpC4YSmc9Punl3KD8DpDYgbxN7",
+      "nome": "user1",
+      "id": 1
+    },
+    {
+      "email": "user2@example.com",
+      "password": "$2a$10$tV9ftvHVMcocBEbBGeHY./bS1YGvqvkxU.cBP3wOX16uLOTlYze2P",
+      "nome": "user2",
+      "id": 2
+    },
+    {
+      "email": "user3@example.com",
+      "password": "$2a$10$aVpc3qrYVtyCrHtRqq8e7yVj7oFwldE1o.274XU/KHS2OHRcfo08L",
+      "nome": "user3",
+      "id": 3
+    },
+    {
+      "email": "hello@gmail.com",
+      "password": "$2a$10$Hf7l4X252BpKUmTyP64Re..ezJmyanagKuXiEJ.4/UNNB9rS6Eg2a",
+      "nome": "hello",
+      "id": 4
+    }
+  ],
+  "movies-popular": [
+    {
+      "id": 2,
+      "title": "The Dark Knight",
+      "poster_path": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "overview": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+      "release_date": "18/07/2008"
+    },
+    {
+      "id": 3,
+      "title": "Interstellar",
+      "poster_path": "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+      "overview": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+      "release_date": "07/11/2014"
+    },
+    {
+      "id": 5,
+      "title": "Pulp Fiction",
+      "poster_path": "https://image.tmdb.org/t/p/w500/fIE3lAGcZDV1G6XM5KmuWnNsPp1.jpg",
+      "overview": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+      "release_date": "14/10/1994"
+    },
+    {
+      "id": 7,
+      "title": "Forrest Gump",
+      "poster_path": "https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+      "overview": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.",
+      "release_date": "06/07/1994"
+    },
+    {
+      "id": 8,
+      "title": "Gladiator",
+      "poster_path": "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+      "overview": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+      "release_date": "05/05/2000"
+    },
+    {
+      "id": 9,
+      "title": "The Shawshank Redemption",
+      "poster_path": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+      "overview": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "release_date": "14/10/1994"
+    },
+    {
+      "id": 10,
+      "title": "The Godfather",
+      "poster_path": "https://image.tmdb.org/t/p/w500/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
+      "overview": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "release_date": "24/03/1972"
+    }
+  ],
+  "favorites": [
+    {
+      "userId": 1,
+      "movie": {
+        "id": 1,
+        "title": "Inception",
+        "poster_path": "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
+        "overview": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "release_date": "16/07/2010"
+      },
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "movie": {
+        "id": 2,
+        "title": "The Dark Knight",
+        "poster_path": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        "overview": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+        "release_date": "18/07/2008"
+      },
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "movie": {
+        "id": 1,
+        "title": "Inception",
+        "poster_path": "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
+        "overview": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "release_date": "16/07/2010"
+      },
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "movie": {
+        "id": 2,
+        "title": "The Dark Knight",
+        "poster_path": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        "overview": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+        "release_date": "18/07/2008"
+      },
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "movie": {
+        "id": 4,
+        "title": "The Matrix",
+        "poster_path": "https://image.tmdb.org/t/p/w500/aZnMlIhhKRT1m9P6P4cU2rcDNQ.jpg",
+        "overview": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+        "release_date": "31/03/1999"
+      },
+      "id": 16
+    }
+  ]
+}

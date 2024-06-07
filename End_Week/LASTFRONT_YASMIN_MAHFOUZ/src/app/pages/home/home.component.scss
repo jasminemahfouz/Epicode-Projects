@@ -1,0 +1,25 @@
+/* Aggiungi questo al tuo file CSS/SCSS */
+.jumbotron {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .jumbotron .btn-primary {
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .jumbotron h1 {
+    font-weight: bold;
+  }
+  
+  .jumbotron p.lead {
+    font-size: 1.2rem;
+  }
+  
+  .jumbotron hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
