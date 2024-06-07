@@ -1,0 +1,14 @@
+<div class="container-fluid bg-profilo text-center min-vh-100 d-flex flex-column justify-content-center align-items-center">
+  <div class="row text-dark w-100">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto bg-light rounded shadow p-5">
+      <img [src]="user.profileImageUrl || 'https://static.vecteezy.com/ti/vettori-gratis/t2/566937-icona-della-persona-gratuito-vettoriale.jpg'" alt="Immagine profilo" class="img-fluid rounded-circle mb-4 profile-img">
+      <h1 class="mb-4 title text-dark">Profilo di {{ user.nome }}</h1>
+      <h3 class="mb-3">Codice utente: <span class="text-primary">user{{ user.id }}</span></h3>
+      <h3 class="mb-3">Username: <span class="text-primary">{{ user.nome }}</span></h3>
+      <h3 class="mb-4">La tua email: <span class="text-primary">{{ user.email }}</span></h3>
+      <button (click)="confirmDelete()" class="btn btn-danger btn-lg">
+        Cancella Profilo
+      </button>
+    </div>
+  </div>
+</div>

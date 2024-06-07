@@ -17,6 +17,9 @@
           <a class="nav-link" routerLink="/dashboard">Dashboard</a>
         </li>
         <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profilo</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
           <button (click)="logout()" class="btn nav-link">Logout</button>
         </li>
       </ul>
