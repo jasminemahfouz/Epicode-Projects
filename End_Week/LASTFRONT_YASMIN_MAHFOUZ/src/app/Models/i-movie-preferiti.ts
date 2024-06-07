@@ -1,7 +1,10 @@
 import { iMovie } from "./i-movie"
 
 export interface iMoviePreferiti {
-  userId:number
-  movie:iMovie
-  id?: number
+  id: number;
+  userId: number;
+  movie: {
+    id: number;
+    title: string;
+  };
 }

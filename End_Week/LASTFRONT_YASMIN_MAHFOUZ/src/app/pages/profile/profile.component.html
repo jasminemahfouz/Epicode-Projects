@@ -6,9 +6,22 @@
       <h3 class="mb-3">Codice utente: <span class="text-primary">user{{ user.id }}</span></h3>
       <h3 class="mb-3">Username: <span class="text-primary">{{ user.nome }}</span></h3>
       <h3 class="mb-4">La tua email: <span class="text-primary">{{ user.email }}</span></h3>
-      <button (click)="confirmDelete()" class="btn btn-danger btn-lg">
+      <button (click)="confirmDelete()" class="btn btn-danger btn-lg mb-4">
         Cancella Profilo
       </button>
+
+      <h3 class="mb-4">I tuoi film preferiti</h3>
+      <div *ngIf="favorites.length > 0; else noFavorites">
+        <ul class="list-group">
+          <li *ngFor="let favorite of favorites" class="favorite-list list-group-item d-flex justify-content-between align-items-center">
+            <span class="movie-title">{{ favorite.movie.title }}</span>
+            <button (click)="removeFavorite(favorite.id)" class="btn btn-sm btn-danger">Rimuovi</button>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noFavorites>
+        <p>Non hai ancora aggiunto nessun film ai preferiti.</p>
+      </ng-template>
     </div>
   </div>
 </div>

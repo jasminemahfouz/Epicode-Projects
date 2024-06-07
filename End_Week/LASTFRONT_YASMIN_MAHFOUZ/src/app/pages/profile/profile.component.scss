@@ -19,3 +19,15 @@
 .text-primary {
   color: #007bff !important;
 }
+
+.favorite-list {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.favorite-list:hover {
+  transform: scale(1.02);
+}

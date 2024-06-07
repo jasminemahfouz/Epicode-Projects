@@ -131,28 +131,6 @@
         "release_date": "31/03/1999"
       },
       "id": 16
-    },
-    {
-      "userId": 4,
-      "movie": {
-        "id": 5,
-        "title": "Pulp Fiction",
-        "poster_path": "https://image.tmdb.org/t/p/w500/fIE3lAGcZDV1G6XM5KmuWnNsPp1.jpg",
-        "overview": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-        "release_date": "14/10/1994"
-      },
-      "id": 20
-    },
-    {
-      "userId": 4,
-      "movie": {
-        "id": 9,
-        "title": "The Shawshank Redemption",
-        "poster_path": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-        "overview": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-        "release_date": "14/10/1994"
-      },
-      "id": 21
     }
   ]
 }
