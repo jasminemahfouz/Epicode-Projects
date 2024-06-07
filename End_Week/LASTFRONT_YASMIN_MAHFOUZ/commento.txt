@@ -1,4 +1,1 @@
-ho provato a fare un server.js che lascio giusto per poterlo rivedere piu avanti ma mi ha preso
-la maggiorparte del tempo, ho provato a farlo partire ma ho avuto vari problemi con http,
-alla fine per stare con i tempi ho fatto un pò di copy dai file delle lezioni di 
-questa settimana siccome erano già pronti. sicuramente potevo fare di meglio :,)
+ho provato a fare un server.js che lascio giusto per poterlo rivedere piu avanti. 
