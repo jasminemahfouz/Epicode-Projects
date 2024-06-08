@@ -71,6 +71,11 @@ export class DashboardComponent implements OnInit {
   }
 
   addFavorite(movie: iMovie) {
+    const isAlreadyFavorite = this.favorites.some(fav => fav.movie.id === movie.id);
+    if (isAlreadyFavorite) {
+      console.log('Il film è già nei preferiti');
+      return; // Esci dalla funzione se il film è già nei preferiti
+    }
     const favorite: Partial<iMoviePreferiti> = {
       userId: this.user.id,
       movie: movie
@@ -97,5 +102,18 @@ export class DashboardComponent implements OnInit {
         }
       });
     }
+  }
+  usersVisible: boolean = false;
+  moviesVisible: boolean = false;
+
+  toggleUsers() {
+    this.usersVisible = !this.usersVisible;
+  }
+
+  toggleMovies() {
+    this.moviesVisible = !this.moviesVisible;
+  }
+  isFavorite(movie: iMovie): boolean {
+    return this.favorites.some(fav => fav.movie.id === movie.id);
   }
 }

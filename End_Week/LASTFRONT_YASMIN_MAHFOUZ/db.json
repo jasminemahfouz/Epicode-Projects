@@ -131,6 +131,28 @@
         "release_date": "31/03/1999"
       },
       "id": 16
+    },
+    {
+      "userId": 4,
+      "movie": {
+        "id": 2,
+        "title": "The Dark Knight",
+        "poster_path": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        "overview": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+        "release_date": "18/07/2008"
+      },
+      "id": 20
+    },
+    {
+      "userId": 4,
+      "movie": {
+        "id": 9,
+        "title": "The Shawshank Redemption",
+        "poster_path": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+        "overview": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "release_date": "14/10/1994"
+      },
+      "id": 21
     }
   ]
 }

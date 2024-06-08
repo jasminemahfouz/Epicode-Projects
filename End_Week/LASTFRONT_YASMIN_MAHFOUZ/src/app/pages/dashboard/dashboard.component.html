@@ -2,14 +2,24 @@
   <div class="row">
     <h1 class="text-center mt-3 mb-5 fs-1 text-primary animate__animated animate__fadeInDown">Hello {{ user.nome }}</h1>
     
-    <div class="col-12 col-md-3 animate__animated animate__fadeInLeft">
-      <ul *ngFor="let user of users" class="list-unstyled user-list p-3 bg-white rounded shadow-sm">
-        <li class="mb-3 border-bottom pb-2">
-          <p><strong>Username:</strong> {{ user.nome }}<br>
-             <strong>Email:</strong> {{ user.email }}</p>
-        </li>
-      </ul>
+    <!-- Toggle button for user list -->
+    <div class="text-center mb-3">
+      <button class="btn btn-info" (click)="toggleUsers()">
+        Toggle User List
+      </button>
     </div>
+    
+    <div class="col-12 col-md-3 animate__animated animate__fadeInLeft">
+      <div *ngIf="usersVisible">
+        <ul *ngFor="let user of users" class="list-unstyled user-list p-3 bg-white rounded shadow-sm">
+          <li class="mb-3 border-bottom pb-2">
+            <p><strong>Username:</strong> {{ user.nome }}<br>
+               <strong>Email:</strong> {{ user.email }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="col-12 col-md-6 text-center">
       <h2 class="mb-4 text-success animate__animated animate__fadeInUp">I tuoi dati</h2>
       <div class="user-data mb-5 p-4 rounded shadow-sm bg-white animate__animated animate__zoomIn">
@@ -17,15 +27,25 @@
         <h4><strong>Username:</strong> {{ user.nome }}</h4>
         <h4><strong>Email:</strong> {{ user.email }}</h4>
       </div>
-
-      <div class="row justify-content-center">
-        <div *ngFor="let movie of movies" class="col-12 col-sm-6 col-lg-4 card mb-4 p-0 movie-card animate__animated animate__fadeInUp animate__delay-1s">
-          <img [src]="movie.poster_path" class="card-img-top rounded-top" alt="{{ movie.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ movie.title }}</h5>
-            <p class="card-text">{{ movie.overview }}</p>
-            <p class="card-text"><small class="text-muted">{{ movie.release_date }}</small></p>
-            <button (click)="addFavorite(movie)" class="btn btn-primary w-100">Add to preferiti</button>
+      
+      <!-- Toggle button for movie cards -->
+      <div class="text-center mb-3">
+        <button class="btn btn-info" (click)="toggleMovies()">
+          Toggle Movies
+        </button>
+      </div>
+      
+      <div *ngIf="moviesVisible">
+        <div class="row justify-content-center">
+          <div *ngFor="let movie of movies" class="col-12 col-sm-6 col-lg-4 card mb-4 p-0 movie-card animate__animated animate__fadeInUp animate__delay-1s">
+            <img [src]="movie.poster_path" class="card-img-top rounded-top" alt="{{ movie.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">{{ movie.overview }}</p>
+              <p class="card-text"><small class="text-muted">{{ movie.release_date }}</small></p>
+              <button *ngIf="!isFavorite(movie)" (click)="addFavorite(movie)" class="btn btn-primary w-100">Add to preferiti</button>
+              <button *ngIf="isFavorite(movie)" class="btn btn-secondary w-100" disabled>Already in preferiti</button>
+            </div>
           </div>
         </div>
       </div>
