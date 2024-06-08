@@ -1,37 +1,37 @@
-<div class="container-fluid mx-2 my-4" style="background: linear-gradient(135deg, #c3ec52 10%, #0ba29d 100%); padding: 20px; border-radius: 10px;">
-  <div class="row">
+<div [ngClass]="{ 'blur-background': isModalOpen }" class="container-fluid mx-2 my-4">
+  <div class="row justify-content-center">
     <h1 class="text-center mt-3 mb-5 fs-1 text-primary animate__animated animate__fadeInDown">Hello {{ user.nome }}</h1>
     
-    <!-- Toggle button for user list -->
     <div class="text-center mb-3">
       <button class="btn btn-info" (click)="toggleUsers()">
-        Toggle User List
+        Show User List
       </button>
     </div>
     
-    <div class="col-12 col-md-3 animate__animated animate__fadeInLeft">
-      <div *ngIf="usersVisible">
-        <ul *ngFor="let user of users" class="list-unstyled user-list p-3 bg-white rounded shadow-sm">
-          <li class="mb-3 border-bottom pb-2">
-            <p><strong>Username:</strong> {{ user.nome }}<br>
-               <strong>Email:</strong> {{ user.email }}</p>
-          </li>
-        </ul>
+    <div class="col-12 col-md-3 mb-4">
+      <div class="animate__animated animate__fadeInLeft">
+        <div *ngIf="usersVisible">
+          <ul *ngFor="let user of users" class="list-unstyled user-list p-3 bg-white rounded shadow-sm">
+            <li class="mb-3 border-bottom pb-2">
+              <p><strong>Username:</strong> {{ user.nome }}<br>
+                 <strong>Email:</strong> {{ user.email }}</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-6 text-center">
-      <h2 class="mb-4 text-success animate__animated animate__fadeInUp">I tuoi dati</h2>
+    <div class="col-12 col-md-6 mb-4">
+      <h2 class="mb-4 text-success animate__animated animate__fadeInUp text-center">I tuoi dati</h2>
       <div class="user-data mb-5 p-4 rounded shadow-sm bg-white animate__animated animate__zoomIn">
         <h4><strong>Codice cliente:</strong> user{{ user.id }}</h4>
         <h4><strong>Username:</strong> {{ user.nome }}</h4>
         <h4><strong>Email:</strong> {{ user.email }}</h4>
       </div>
-      
-      <!-- Toggle button for movie cards -->
+    
       <div class="text-center mb-3">
         <button class="btn btn-info" (click)="toggleMovies()">
-          Toggle Movies
+          Show Movies
         </button>
       </div>
       
@@ -39,26 +39,45 @@
         <div class="row justify-content-center">
           <div *ngFor="let movie of movies" class="col-12 col-sm-6 col-lg-4 card mb-4 p-0 movie-card animate__animated animate__fadeInUp animate__delay-1s">
             <img [src]="movie.poster_path" class="card-img-top rounded-top" alt="{{ movie.title }}">
-            <div class="card-body">
+            <div class="card-body flex-grow-1">
               <h5 class="card-title">{{ movie.title }}</h5>
               <p class="card-text">{{ movie.overview }}</p>
               <p class="card-text"><small class="text-muted">{{ movie.release_date }}</small></p>
-              <button *ngIf="!isFavorite(movie)" (click)="addFavorite(movie)" class="btn btn-primary w-100">Add to preferiti</button>
+              <button *ngIf="!isFavorite(movie)" (click)="addFavorite(movie)" class="btn btn-primary w-100">Add preferiti</button>
               <button *ngIf="isFavorite(movie)" class="btn btn-secondary w-100" disabled>Already in preferiti</button>
+              <button (click)="openModal(movie)" class="btn btn-warning w-100 mt-2">Highlight</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-3 animate__animated animate__fadeInRight">
-      <h4 class="mb-4 text-primary">I tuoi film preferiti</h4>
-      <ul class="list-group favorite-list">
-        <li *ngFor="let favorite of favorites" class="list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeInRight animate__delay-2s">
-          <span>{{ favorite.movie.title }}</span>
-          <button (click)="removeFavorite(favorite.movie.id)" class="btn btn-danger btn-sm">Remove</button>
-        </li>
-      </ul>
+    <div class="col-12 col-md-3 mb-4">
+      <div class="animate__animated animate__fadeInRight">
+        <h4 class="mb-4 text-primary text-center">film preferiti</h4>
+        <ul class="list-group favorite-list">
+          <li *ngFor="let favorite of favorites" class="list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeInRight animate__delay-2s">
+            <span>{{ favorite.movie.title }}</span>
+            <button (click)="removeFavorite(favorite.movie.id)" class="btn btn-danger btn-sm">Remove</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+
+  <ng-template #highlightModal let-modal>
+    <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">{{ highlightedMovie?.title }}</h3>
+          <button type="button" class="btn-close custom-close-btn" aria-label="Close" (click)="closeModal(modal)"></button>
+        </div>
+        <div class="modal-body">
+          <img [src]="highlightedMovie?.poster_path" class="img-fluid custom-img" alt="{{ highlightedMovie?.title }}">
+          <p class="mt-3">{{ highlightedMovie?.overview }}</p>
+          <p><small class="text-muted">{{ highlightedMovie?.release_date }}</small></p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>
