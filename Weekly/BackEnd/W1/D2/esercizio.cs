@@ -45,8 +45,8 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             // Creare istanze di Persona utilizzando il costruttore
-            Persona persona1 = new Persona("Mario", "Rossi", 25);
-            Persona persona2 = new Persona("Luca", "Bianchi", 30);
+            Persona persona1 = new Persona("Yasmin", "Mahfouz", 25);
+            Persona persona2 = new Persona("Elodie", "Bianchi", 30);
 
             // Stampare dettagli a schermo usando i metodi della classe Persona
             Console.WriteLine("Dettagli della Persona 1:");
