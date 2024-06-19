@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        string[] nomi = {"Mario", "Luca", "Giulia", "Anna", "Francesco"};
+        string[] nomi = {"Billie", "Mario", "Jules", "Nicola", "Francesco"};
         
         Console.WriteLine("Inserisci il nome da cercare:");
         string nomeDaCercare = Console.ReadLine();
