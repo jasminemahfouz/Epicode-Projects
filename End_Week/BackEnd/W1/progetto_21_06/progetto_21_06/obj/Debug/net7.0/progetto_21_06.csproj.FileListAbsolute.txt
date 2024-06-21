@@ -1,0 +1,15 @@
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/bin/Debug/net7.0/progetto_21_06
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/bin/Debug/net7.0/progetto_21_06.deps.json
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/bin/Debug/net7.0/progetto_21_06.runtimeconfig.json
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/bin/Debug/net7.0/progetto_21_06.dll
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/bin/Debug/net7.0/progetto_21_06.pdb
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.csproj.AssemblyReference.cache
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.AssemblyInfoInputs.cache
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.AssemblyInfo.cs
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.csproj.CoreCompileInputs.cache
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.dll
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/refint/progetto_21_06.dll
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.pdb
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/progetto_21_06.genruntimeconfig.cache
+/Users/adapter88/Projects/progetto_21_06/progetto_21_06/obj/Debug/net7.0/ref/progetto_21_06.dll
