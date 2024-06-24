@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/W2_D1.props" />
+</Project>

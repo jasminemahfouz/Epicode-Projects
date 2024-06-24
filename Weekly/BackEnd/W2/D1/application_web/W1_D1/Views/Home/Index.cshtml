@@ -1,0 +1,34 @@
+﻿@model IEnumerable<W2_D1.Models.FoodItem>
+@{
+    var selectedItems = ViewBag.SelectedItems as List<W2_D1.Models.FoodItem>;
+}
+
+<h2>==============MENU==============</h2>
+
+<form asp-action="AddToOrder" method="post">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @item.Id: @item.Name (€ @item.Price)
+                <button type="submit" name="id" value="@item.Id">Aggiungi</button>
+                @{
+                    var selectedItem = selectedItems?.FirstOrDefault(si => si.Id == item.Id);
+                    if (selectedItem != null)
+                    {
+                        <span> Quantità: @selectedItem.Quantity</span>
+                        <form asp-action="RemoveFromOrder" method="post" style="display:inline">
+                            <button type="submit" name="id" value="@selectedItem.Id">Rimuovi</button>
+                        </form>
+                    }
+                }
+            </li>
+        }
+    </ul>
+</form>
+
+<form asp-action="FinalBill" method="get">
+    <button type="submit">11: Stampa conto finale e conferma</button>
+</form>
+
+<h2>==============MENU==============</h2>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<W2_D1.Models.FoodItem>
+
+<h2>Il tuo conto finale:</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Name (€ @item.Price) - Quantità: @item.Quantity
+        </li>
+    }
+</ul>
+
+<p>Servizio al tavolo: € 3.00</p>
+<p>Totale: € @ViewBag.Total</p>
+
+<a href="/">Torna al menu</a>
