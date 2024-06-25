@@ -1,0 +1,15 @@
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/bin/Debug/net7.0/W2_D2_console
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/bin/Debug/net7.0/W2_D2_console.deps.json
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/bin/Debug/net7.0/W2_D2_console.runtimeconfig.json
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/bin/Debug/net7.0/W2_D2_console.dll
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/bin/Debug/net7.0/W2_D2_console.pdb
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.csproj.AssemblyReference.cache
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.AssemblyInfoInputs.cache
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.AssemblyInfo.cs
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.csproj.CoreCompileInputs.cache
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.dll
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/refint/W2_D2_console.dll
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.pdb
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/W2_D2_console.genruntimeconfig.cache
+/Users/adapter88/Projects/W2_D2_console/W2_D2_console/obj/Debug/net7.0/ref/W2_D2_console.dll
