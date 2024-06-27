@@ -1,0 +1,56 @@
+﻿@model List<CinemaMultisala.Models.Sala>
+
+@{
+    ViewData["Title"] = "Vendita Biglietti";
+}
+
+<h2>Vendita Biglietti</h2>
+
+<form asp-action="Vendi" method="post">
+    <div>
+        <label>Nome</label>
+        <input type="text" name="Nome" required />
+    </div>
+    <div>
+        <label>Cognome</label>
+        <input type="text" name="Cognome" required />
+    </div>
+    <div>
+        <label>Sala</label>
+        <select name="Sala" required>
+            @foreach (var sala in Model)
+            {
+                <option value="@sala.Nome">@sala.Nome</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Tipo di Biglietto</label>
+        <select name="TipoBiglietto" required>
+            <option value="Intero">Intero</option>
+            <option value="Ridotto">Ridotto</option>
+        </select>
+    </div>
+    <button type="submit">Vendi Biglietto</button>
+</form>
+
+<h3>Stato Vendite</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Sala</th>
+            <th>Biglietti Venduti</th>
+            <th>Biglietti Ridotti</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sala in Model)
+        {
+            <tr>
+                <td>@sala.Nome</td>
+                <td>@sala.BigliettiVenduti</td>
+                <td>@sala.BigliettiRidotti</td>
+            </tr>
+        }
+    </tbody>
+</table>
