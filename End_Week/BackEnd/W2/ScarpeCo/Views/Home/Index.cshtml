@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ScarpeCo.Models.Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron text-center py-16 bg-gradient-to-r from-blue-400 to-purple-500 text-white">
+    <h1 class="text-5xl font-bold">Benvenuti su Scarpe & Co!</h1>
+    <p class="text-xl mt-4">Trova le migliori scarpe da tennis nel nostro negozio online.</p>
+</div>
+
+<h2 class="text-3xl font-semibold my-8 text-center">Vetrina</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    @foreach (var product in Model)
+    {
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="@product.CoverImage" class="w-full h-48 object-cover" alt="@product.Name">
+            <div class="p-4">
+                <h3 class="text-xl font-semibold">@product.Name</h3>
+                <p class="text-gray-700 mt-2">@string.Format("{0:0.00} €", product.Price)</p>
+                <a href="@Url.Action("Details", "Home", new { id = product.Id })" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Dettagli</a>
+            </div>
+        </div>
+    }
+</div>

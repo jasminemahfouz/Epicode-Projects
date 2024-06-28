@@ -1,0 +1,47 @@
+﻿@model ScarpeCo.Models.Product
+
+@{
+    ViewData["Title"] = "Aggiungi Prodotto";
+}
+
+<h2 class="text-3xl font-semibold my-8 text-center">Aggiungi Prodotto</h2>
+
+<form asp-action="Create" method="post" class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-8">
+    <div class="form-group mb-4">
+        <label asp-for="Name" class="control-label block text-gray-700 font-bold mb-2"></label>
+        <input asp-for="Name" class="form-control w-full px-3 py-2 border rounded" />
+        <span asp-validation-for="Name" class="text-red-500 text-sm"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="Price" class="control-label block text-gray-700 font-bold mb-2"></label>
+        <input asp-for="Price" class="form-control w-full px-3 py-2 border rounded" />
+        <span asp-validation-for="Price" class="text-red-500 text-sm"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="Description" class="control-label block text-gray-700 font-bold mb-2"></label>
+        <textarea asp-for="Description" class="form-control w-full px-3 py-2 border rounded"></textarea>
+        <span asp-validation-for="Description" class="text-red-500 text-sm"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="CoverImage" class="control-label block text-gray-700 font-bold mb-2"></label>
+        <input asp-for="CoverImage" class="form-control w-full px-3 py-2 border rounded" />
+        <span asp-validation-for="CoverImage" class="text-red-500 text-sm"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="AdditionalImage1" class="control-label block text-gray-700 font-bold mb-2"></label>
+        <input asp-for="AdditionalImage1" class="form-control w-full px-3 py-2 border rounded" />
+        <span asp-validation-for="AdditionalImage1" class="text-red-500 text-sm"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label asp-for="AdditionalImage2" class="control-label block text-gray-700 font-bold mb-2"></label>
+        <input asp-for="AdditionalImage2" class="form-control w-full px-3 py-2 border rounded" />
+        <span asp-validation-for="AdditionalImage2" class="text-red-500 text-sm"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Aggiungi" class="btn bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" />
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

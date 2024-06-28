@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ScarpeCo.Models.Product>
+
+@{
+    ViewData["Title"] = "Admin - Gestione Prodotti";
+}
+
+<h2 class="text-3xl font-semibold my-8 text-center">Gestione Prodotti</h2>
+
+<table class="table-auto w-full bg-white shadow-md rounded-lg">
+    <thead class="bg-gray-200">
+        <tr>
+            <th class="px-4 py-2">Nome</th>
+            <th class="px-4 py-2">Prezzo</th>
+            <th class="px-4 py-2">Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr class="border-t">
+                <td class="px-4 py-2">@product.Name</td>
+                <td class="px-4 py-2">@string.Format("{0:0.00} €", product.Price)</td>
+                <td class="px-4 py-2">
+                    <a href="@Url.Action("Edit", "Home", new { id = product.Id })" class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600 inline-block">Modifica</a>
+                    <form asp-action="Delete" method="post" class="inline-block">
+                        <input type="hidden" name="id" value="@product.Id" />
+                        <input type="submit" value="Elimina" class="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Home")" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Aggiungi Nuovo Prodotto</a>

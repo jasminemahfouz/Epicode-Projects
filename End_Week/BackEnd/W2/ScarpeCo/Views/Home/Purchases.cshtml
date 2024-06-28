@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ScarpeCo.Models.Product>
+
+@{
+    ViewData["Title"] = "I Miei Acquisti";
+}
+
+<h2 class="text-3xl font-semibold my-8 text-center">I Miei Acquisti</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    @foreach (var product in Model)
+    {
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="@product.CoverImage" class="w-full h-48 object-cover" alt="@product.Name">
+            <div class="p-4">
+                <h3 class="text-xl font-semibold">@product.Name</h3>
+                <p class="text-gray-700 mt-2">@string.Format("{0:0.00} €", product.Price)</p>
+                <form asp-action="Unpurchase" method="post" class="mt-4">
+                    <input type="hidden" name="id" value="@product.Id" />
+                    <input type="submit" value="Elimina" class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700" />
+                </form>
+            </div>
+        </div>
+    }
+</div>
