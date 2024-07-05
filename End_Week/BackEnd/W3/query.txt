@@ -1,0 +1,135 @@
+*************************************************************
+                         DataBase
+*************************************************************
+CREATE DATABASE PoliziaMunicipale;
+GO
+
+USE PoliziaMunicipale;
+GO
+
+CREATE TABLE Anagrafica (
+    idanagrafica INT PRIMARY KEY IDENTITY,
+    Cognome NVARCHAR(50),
+    Nome NVARCHAR(50),
+    Indirizzo NVARCHAR(100),
+    Citta NVARCHAR(50),
+    CAP NVARCHAR(10),
+    Cod_Fisc NVARCHAR(16)
+);
+
+CREATE TABLE TipoViolazione (
+    idviolazione INT PRIMARY KEY IDENTITY,
+    descrizione NVARCHAR(100)
+);
+
+CREATE TABLE Verbale (
+    idverbale INT PRIMARY KEY IDENTITY,
+    idanagrafica INT,
+    idviolazione INT,
+    DataViolazione DATE,
+    IndirizzoViolazione NVARCHAR(100),
+    Nominativo_Agente NVARCHAR(50),
+    DataTrascrizioneVerbale DATE,
+    Importo DECIMAL(10, 2),
+    DecurtamentoPunti INT,
+    FOREIGN KEY (idanagrafica) REFERENCES Anagrafica(idanagrafica),
+    FOREIGN KEY (idviolazione) REFERENCES TipoViolazione(idviolazione)
+);
+GO
+
+*************************************************************
+                    Popolazione dati
+*************************************************************
+
+-- Popolamento Anagrafica
+INSERT INTO Anagrafica (Cognome, Nome, Indirizzo, Citta, CAP, Cod_Fisc)
+VALUES ('Potter', 'Harry', '4 Privet Drive', 'Little Whinging', '12345', 'PTRHRY80A01H501U'),
+       ('Granger', 'Hermione', 'Hampstead Garden Suburb', 'London', '67890', 'GRNHRM85M01L219K'),
+       ('Weasley', 'Ron', 'The Burrow', 'Ottery St Catchpole', '54321', 'WLSRN90A01C351L');
+
+-- Popolamento TipoViolazione
+INSERT INTO TipoViolazione (descrizione)
+VALUES ('Eccesso di velocità sulla scopa'),
+       ('Uso improprio di magia in pubblico'),
+       ('Entrata in area vietata del Ministero');
+
+-- Popolamento Verbale
+INSERT INTO Verbale (idanagrafica, idviolazione, DataViolazione, IndirizzoViolazione, Nominativo_Agente, DataTrascrizioneVerbale, Importo, DecurtamentoPunti)
+VALUES (1, 1, '2001-11-04', 'Hogwarts Quidditch Pitch', 'Agente Moody', '2001-11-05', 100.00, 5),
+       (2, 2, '2002-05-12', 'Diagon Alley', 'Agente Tonks', '2002-05-13', 150.00, 3),
+       (3, 3, '2003-07-07', 'Ministry of Magic', 'Agente Shacklebolt', '2003-07-08', 200.00, 10);
+GO
+
+*************************************************************
+                         Query
+*************************************************************
+
+-- 1. Conteggio dei verbali trascritti
+SELECT COUNT(*) AS ConteggioVerbaliTrascritti
+FROM Verbale;
+
+-- 2. Conteggio dei verbali trascritti raggruppati per anagrafe
+SELECT A.Cognome, A.Nome, COUNT(*) AS ConteggioVerbali
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+GROUP BY A.Cognome, A.Nome;
+
+-- 3. Conteggio dei verbali trascritti raggruppati per tipo di violazione
+SELECT T.descrizione, COUNT(*) AS ConteggioVerbali
+FROM Verbale V
+JOIN TipoViolazione T ON V.idviolazione = T.idviolazione
+GROUP BY T.descrizione;
+
+-- 4. Totale dei punti decurtati per ogni anagrafe
+SELECT A.Cognome, A.Nome, SUM(V.DecurtamentoPunti) AS TotalePuntiDecurtati
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+GROUP BY A.Cognome, A.Nome;
+
+-- 5. Cognome, Nome, Data violazione, Indirizzo violazione, importo e punti decurtati per tutti gli anagrafici residenti a Little Whinging
+SELECT A.Cognome, A.Nome, V.DataViolazione, V.IndirizzoViolazione, V.Importo, V.DecurtamentoPunti
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+WHERE A.Citta = 'Little Whinging';
+
+-- 6. Cognome, Nome, Indirizzo, Data violazione, importo e punti decurtati per le violazioni fatte tra il febbraio 2009 e luglio 2009
+SELECT A.Cognome, A.Nome, A.Indirizzo, V.DataViolazione, V.Importo, V.DecurtamentoPunti
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+WHERE V.DataViolazione BETWEEN '2009-02-01' AND '2009-07-31';
+
+-- 7. Totale degli importi per ogni anagrafico
+SELECT A.Cognome, A.Nome, SUM(V.Importo) AS TotaleImporti
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+GROUP BY A.Cognome, A.Nome;
+
+-- 8. Visualizzazione di tutti gli anagrafici residenti a Little Whinging
+SELECT *
+FROM Anagrafica
+WHERE Citta = 'Little Whinging';
+
+-- 9. Query che visualizzi Data violazione, Importo e decurtamento punti relativi ad una certa data
+DECLARE @DataViolazione DATE = '2001-11-04';
+SELECT V.DataViolazione, V.Importo, V.DecurtamentoPunti
+FROM Verbale V
+WHERE V.DataViolazione = @DataViolazione;
+
+-- 10. Conteggio delle violazioni contestate raggruppate per Nominativo dell’agente di Polizia
+SELECT V.Nominativo_Agente, COUNT(*) AS ConteggioViolazioni
+FROM Verbale V
+GROUP BY V.Nominativo_Agente;
+
+-- 11. Cognome, Nome, Indirizzo, Data violazione, Importo e punti decurtati per tutte le violazioni che superino il decurtamento di 5 punti
+SELECT A.Cognome, A.Nome, A.Indirizzo, V.DataViolazione, V.Importo, V.DecurtamentoPunti
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+WHERE V.DecurtamentoPunti > 5;
+
+
+-- 12. Cognome, Nome, Indirizzo, Data violazione, Importo e punti decurtati per tutte le violazioni che superino l’importo di 400 euro
+SELECT A.Cognome, A.Nome, A.Indirizzo, V.DataViolazione, V.Importo, V.DecurtamentoPunti
+FROM Verbale V
+JOIN Anagrafica A ON V.idanagrafica = A.idanagrafica
+WHERE V.Importo > 400;
+GO
