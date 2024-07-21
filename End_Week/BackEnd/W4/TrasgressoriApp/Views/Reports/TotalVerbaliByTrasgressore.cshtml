@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TotalVerbaliViewModel>
+
+@{
+    ViewData["Title"] = "Totale Verbali per Trasgressore";
+}
+
+<h1>Totale Verbali per Trasgressore</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Totale Verbali</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Cognome</td>
+                <td>@item.TotaleVerbali</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to Reports</a>
+</div>

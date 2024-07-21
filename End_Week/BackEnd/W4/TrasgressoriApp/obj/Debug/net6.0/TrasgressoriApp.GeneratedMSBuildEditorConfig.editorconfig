@@ -1,0 +1,125 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TrasgressoriApp
+build_property.RootNamespace = TrasgressoriApp
+build_property.ProjectDir = /Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Reports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVwb3J0cy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Reports/TotalPointsByTrasgressore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVwb3J0cy9Ub3RhbFBvaW50c0J5VHJhc2dyZXNzb3JlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Reports/TotalVerbaliByTrasgressore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVwb3J0cy9Ub3RhbFZlcmJhbGlCeVRyYXNncmVzc29yZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Reports/ViolazioniOverFourHundredEuro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVwb3J0cy9WaW9sYXppb25pT3ZlckZvdXJIdW5kcmVkRXVyby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Reports/ViolazioniOverTenPoints.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVwb3J0cy9WaW9sYXppb25pT3ZlclRlblBvaW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Trasgressori/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhc2dyZXNzb3JpL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Trasgressori/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhc2dyZXNzb3JpL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Trasgressori/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhc2dyZXNzb3JpL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Trasgressori/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhc2dyZXNzb3JpL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Trasgressori/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhc2dyZXNzb3JpL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Verbali/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVyYmFsaS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Verbali/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVyYmFsaS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Verbali/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVyYmFsaS9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Verbali/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVyYmFsaS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Verbali/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVyYmFsaS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Violazioni/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlvbGF6aW9uaS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Violazioni/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlvbGF6aW9uaS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Violazioni/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlvbGF6aW9uaS9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Violazioni/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlvbGF6aW9uaS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Violazioni/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlvbGF6aW9uaS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/adapter88/Projects/TrasgressoriApp/TrasgressoriApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2vzsgi1svd

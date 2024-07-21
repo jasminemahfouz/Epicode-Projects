@@ -1,0 +1,42 @@
+﻿@model Violazione
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Violazione</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Descrizione
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Descrizione
+        </dd>
+        <dt class="col-sm-2">
+            Data Violazione
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DataViolazione
+        </dd>
+        <dt class="col-sm-2">
+            Importo
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Importo
+        </dd>
+        <dt class="col-sm-2">
+            Punti Decurtati
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PuntiDecurtati
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" asp-route-trasgressoreId="@Model.TrasgressoreId">Back to List</a>
+    <a asp-controller="Verbali" asp-action="Index" asp-route-violazioneId="@Model.Id" asp-route-trasgressoreId="@Model.TrasgressoreId">View Verbali</a>
+</div>

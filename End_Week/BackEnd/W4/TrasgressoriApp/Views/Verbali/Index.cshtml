@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Verbale>
+
+@{
+    ViewData["Title"] = "Verbali";
+}
+
+<h1>Verbali</h1>
+
+<p>
+    <a asp-action="Create" asp-route-violazioneId="@ViewBag.ViolazioneId" asp-route-trasgressoreId="@ViewBag.TrasgressoreId">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Numero Verbale</th>
+            <th>Data Verbale</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.NumeroVerbale)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataVerbale)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-secondary" asp-action="Index" asp-controller="Violazioni" asp-route-trasgressoreId="@ViewBag.TrasgressoreId">Back to Violazioni</a>
+</div>

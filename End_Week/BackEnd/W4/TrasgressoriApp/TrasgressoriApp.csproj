@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Trasgressori\" />
+    <None Remove="Views\Violazioni\" />
+    <None Remove="Views\Verbali\" />
+    <None Remove="Views\Reports\" />
+    <None Remove="txtsever\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Trasgressori\" />
+    <Folder Include="Views\Violazioni\" />
+    <Folder Include="Views\Verbali\" />
+    <Folder Include="Views\Reports\" />
+    <Folder Include="txtsever\" />
+  </ItemGroup>
+</Project>
