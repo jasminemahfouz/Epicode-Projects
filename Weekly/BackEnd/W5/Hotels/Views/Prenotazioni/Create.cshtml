@@ -1,0 +1,94 @@
+﻿@model Hotels.Models.Prenotazione
+
+@{
+    ViewData["Title"] = "Crea Prenotazione";
+}
+
+<div class="container mt-5">
+    <h1>Crea Prenotazione</h1>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label asp-for="DataPrenotazione" class="form-label"></label>
+                    <input asp-for="DataPrenotazione" class="form-control" placeholder="Seleziona la data della prenotazione"/>
+                    <span asp-validation-for="DataPrenotazione" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="NumeroProgressivo" class="form-label"></label>
+                    <input asp-for="NumeroProgressivo" class="form-control" readonly />
+                    <span asp-validation-for="NumeroProgressivo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Anno" class="form-label"></label>
+                    <input asp-for="Anno" class="form-control" value="2024" readonly />
+                    <span asp-validation-for="Anno" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Dal" class="form-label"></label>
+                    <input asp-for="Dal" class="form-control" placeholder="Data di inizio"/>
+                    <span asp-validation-for="Dal" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Al" class="form-label"></label>
+                    <input asp-for="Al" class="form-control" placeholder="Data di fine"/>
+                    <span asp-validation-for="Al" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Caparra" class="form-label"></label>
+                    <input asp-for="Caparra" class="form-control" placeholder="Inserisci la caparra"/>
+                    <span asp-validation-for="Caparra" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ClienteId" class="form-label">Cliente</label>
+                    <select asp-for="ClienteId" class="form-select" asp-items="@(new SelectList(ViewBag.Clienti, "Id", "Cognome"))"></select>
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CameraId" class="form-label">Tipologia Camera</label>
+                    <select asp-for="CameraId" class="form-select" asp-items="@(new SelectList(ViewBag.Camere, "Id", "Tipologia"))"></select>
+                    <span asp-validation-for="CameraId" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Tariffa" class="form-label">Tariffa Giornaliera</label>
+                    <input asp-for="Tariffa" class="form-control" readonly />
+                    <span asp-validation-for="Tariffa" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="TipologiaSoggiorno" class="form-label"></label>
+                    <input asp-for="TipologiaSoggiorno" class="form-control" placeholder="Inserisci la tipologia di soggiorno"/>
+                    <span asp-validation-for="TipologiaSoggiorno" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Servizi</label>
+                    @foreach (var servizio in ViewBag.Servizi)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="@servizio.Id" id="servizio_@servizio.Id" name="ServiziSelezionati" />
+                            <label class="form-check-label" for="servizio_@servizio.Id">@servizio.Descrizione</label>
+                        </div>
+                    }
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Salva</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#CameraId').change(function () {
+                var cameraId = $(this).val();
+                if (cameraId) {
+                    $.getJSON('@Url.Action("GetCameraPrice", "Prenotazioni")/' + cameraId, function (data) {
+                        $('#Tariffa').val(data);
+                    });
+                } else {
+                    $('#Tariffa').val('');
+                }
+            });
+        });
+    </script>
+}

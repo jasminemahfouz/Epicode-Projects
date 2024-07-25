@@ -1,0 +1,36 @@
+﻿@model Hotels.Models.Camera
+
+@{
+    ViewData["Title"] = "Crea Camera";
+}
+
+<div class="container mt-5">
+    <h2>Crea Camera</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title">Camera</h4>
+            <hr />
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label asp-for="Descrizione" class="form-label"></label>
+                    <input asp-for="Descrizione" class="form-control" placeholder="Inserisci la descrizione" />
+                    <span asp-validation-for="Descrizione" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Tipologia" class="form-label"></label>
+                    <input asp-for="Tipologia" class="form-control" placeholder="Inserisci la tipologia" />
+                    <span asp-validation-for="Tipologia" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Prezzo" class="form-label"></label>
+                    <input asp-for="Prezzo" class="form-control" placeholder="Inserisci il prezzo" />
+                    <span asp-validation-for="Prezzo" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Salva</button>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary w-100">Indietro</a>
+    </div>
+</div>

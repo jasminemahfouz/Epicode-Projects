@@ -1,0 +1,63 @@
+﻿@model Hotels.Models.Cliente
+
+@{
+    ViewData["Title"] = "Dettagli Cliente";
+}
+
+<div class="container mt-5">
+    <h2>Dettagli Cliente</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title">Cliente</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CodiceFiscale)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CodiceFiscale)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Cognome)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Cognome)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Citta)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Citta)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Provincia)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Provincia)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Cellulare)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Cellulare)
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning w-100">Modifica</a>
+        <a asp-action="Index" class="btn btn-secondary w-100 mt-2">Indietro</a>
+    </div>
+</div>

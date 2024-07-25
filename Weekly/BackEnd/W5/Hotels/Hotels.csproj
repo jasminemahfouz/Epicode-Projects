@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DAO\" />
+    <None Remove="Handlers\" />
+    <None Remove="Views\Clienti\" />
+    <None Remove="Views\Camere\" />
+    <None Remove="Views\Prenotazioni\" />
+    <None Remove="Account\" />
+    <None Remove="Views\Servizi\" />
+    <None Remove="Views\Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Views\Clienti\" />
+    <Folder Include="Views\Camere\" />
+    <Folder Include="Views\Prenotazioni\" />
+    <Folder Include="Account\" />
+    <Folder Include="Views\Servizi\" />
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+  </ItemGroup>
+</Project>

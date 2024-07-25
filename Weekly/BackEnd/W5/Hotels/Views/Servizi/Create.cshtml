@@ -1,0 +1,32 @@
+﻿@model Hotels.Models.Servizio
+
+@{
+    ViewData["Title"] = "Crea Servizio";
+}
+
+<h2>Crea Servizio</h2>
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title">Nuovo Servizio</h4>
+            <hr />
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label asp-for="Descrizione" class="form-label"></label>
+                    <input asp-for="Descrizione" class="form-control" placeholder="Descrivi il servizio"/>
+                    <span asp-validation-for="Descrizione" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Prezzo" class="form-label"></label>
+                    <input asp-for="Prezzo" class="form-control" placeholder="Inserisci il prezzo"/>
+                    <span asp-validation-for="Prezzo" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Salva</button>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary w-100">Indietro</a>
+    </div>
+</div>

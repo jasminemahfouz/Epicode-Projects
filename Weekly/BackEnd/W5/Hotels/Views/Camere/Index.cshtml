@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Hotels.Models.Camera>
+
+@{
+    ViewData["Title"] = "Tipologia Camere";
+}
+
+<div class="container mt-5">
+    <h2>Tipologia Camere</h2>
+    <a asp-action="Create" class="btn btn-primary mb-3 w-100">Crea nuova camera</a>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Descrizione)</th>
+                    <th>@Html.DisplayNameFor(model => model.Tipologia)</th>
+                    <th>@Html.DisplayNameFor(model => model.Prezzo)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Descrizione)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Tipologia)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Prezzo)</td>
+                        <td class="text-end">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Modifica</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Dettagli</a>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(@item.Id)">Elimina</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function confirmDelete(id) {
+            if (confirm("Sei sicuro di voler eliminare questa camera?")) {
+                $.ajax({
+                    url: '@Url.Action("Delete", "Camere")',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (result) {
+                        if (result.success) {
+                            alert("Camera eliminata con successo.");
+                            location.reload();
+                        } else {
+                            alert("Errore durante l'eliminazione della camera: " + result.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Errore durante l'eliminazione della camera.");
+                    }
+                });
+            }
+        }
+    </script>
+}

@@ -1,0 +1,39 @@
+﻿@model Hotels.Models.CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Check-out";
+}
+
+<div class="container mt-5">
+    <h2>Riepilogo Check-out</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <p><strong>Cliente:</strong> @Model.Prenotazione.Cliente.Cognome @Model.Prenotazione.Cliente.Nome</p>
+            <p><strong>Camera:</strong> @Model.Prenotazione.Camera.Descrizione</p>
+            <p><strong>Dal:</strong> @Model.Prenotazione.Dal.ToShortDateString()</p>
+            <p><strong>Al:</strong> @Model.Prenotazione.Al.ToShortDateString()</p>
+            <p><strong>Tariffa giornaliera:</strong> @Model.Prenotazione.Tariffa.ToString("C")</p>
+            <p><strong>Caparra:</strong> @Model.Prenotazione.Caparra.ToString("C")</p>
+            <h5>Servizi Aggiuntivi:</h5>
+            <ul>
+                @foreach (var servizio in Model.Prenotazione.Servizi)
+                {
+                    <li>@servizio.Descrizione - @servizio.Prezzo.ToString("C")</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4>Riepilogo Totale:</h4>
+            <p><strong>Totale Stanza:</strong> @Model.TotaleStanza.ToString("C")</p>
+            <p><strong>+ Totale Servizi Aggiuntivi:</strong> @Model.TotaleServizi.ToString("C")</p>
+            <p><strong>- Caparra Iniziale:</strong> @Model.Prenotazione.Caparra.ToString("C")</p>
+            <h3>Totale Da Saldare: @Model.Totale.ToString("C")</h3>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary w-100">Indietro</a>
+        <a asp-action="DownloadPdf" asp-route-id="@Model.Prenotazione.Id" class="btn btn-success w-100 mt-2">Scarica PDF</a>
+    </div>
+</div>
