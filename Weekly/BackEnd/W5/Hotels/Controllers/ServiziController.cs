@@ -25,7 +25,7 @@ namespace Hotels.Controllers
             }
             catch (Exception ex)
             {
-                // Log dell'errore (opzionale)
+               
                 return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             }
         }
@@ -94,7 +94,7 @@ namespace Hotels.Controllers
             }
             catch (Exception ex)
             {
-                // Log dell'errore (opzionale)
+               
                 return Json(new { success = false, message = ex.Message });
             }
         }
