@@ -161,7 +161,7 @@ namespace Hotels.Controllers
         }
 
 
-        public IActionResult DownloadPdf(int id) //ho installato un pacchetto Install-Package iTextSharp.LGPLv2.Core per creare il pdf quando si va su checkout
+        public IActionResult DownloadPdf(int id) //suggerito da chatgpt
         {
             var prenotazione = _prenotazioneDao.GetById(id);
             if (prenotazione == null)
