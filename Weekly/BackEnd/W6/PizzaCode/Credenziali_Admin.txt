@@ -2,3 +2,6 @@
 user: admin
 password: adminpassword
 creato directly in sql
+INSERT INTO Users (Username, Password, Role)
+VALUES ('admin', 'yourpassword', 'Admin');
+
