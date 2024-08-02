@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Pizzacode.Models.Order>
+
+@{
+    ViewData["Title"] = "Gestione Ordini";
+}
+
+<div class="container mt-5">
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="card">
+        <div class="card-header bg-warning text-white">
+            <h4>Lista Ordini</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Ordine ID</th>
+                        <th>Utente</th>
+                        <th>Data</th>
+                        <th>Completato</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr id="order-row-@order.Id">
+                            <td>@order.Id</td>
+                            <td>@order.UserId</td>
+                            <td>@order.CreatedAt.ToShortDateString()</td>
+                            <td>@(order.IsCompleted ? "Sì" : "No")</td>
+                            <td>
+                                @if (order.IsCompleted)
+                                {
+                                    <button class="btn btn-success" disabled>Completato</button>
+                                }
+                                else
+                                {
+                                    <form asp-action="MarkAsCompleted" method="post" class="d-inline">
+                                        <input type="hidden" name="orderId" value="@order.Id" />
+                                        <button type="submit" class="btn btn-primary">Segna come completato</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

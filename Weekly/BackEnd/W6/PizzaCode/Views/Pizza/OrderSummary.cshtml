@@ -1,0 +1,81 @@
+﻿@model Pizzacode.Models.Order
+
+@{
+    ViewData["Title"] = "Riepilogo Ordine";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Riepilogo Ordine</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nome Pizza</th>
+                <th>Quantità</th>
+                <th>Prezzo</th>
+                <th>Immagine</th>
+                <th>Ingredienti</th>
+                <th>Tempo di Consegna</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderItems)
+            {
+                <tr>
+                    <td>@item.Pizza.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.Pizza.Price * item.Quantity) €</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.Pizza.ImageUrl))
+                        {
+                            <img src="@item.Pizza.ImageUrl" alt="@item.Pizza.Name" style="width:100px; height:auto;" />
+                        }
+                        else
+                        {
+                            <span>Nessuna immagine disponibile</span>
+                        }
+                    </td>
+                    <td>@item.Pizza.Ingredients</td>
+                    <td>@item.Pizza.DeliveryTime.ToString(@"hh\:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3 class="mt-4">Indirizzo di Spedizione</h3>
+    <form asp-action="CompleteOrder" method="post">
+        <input type="hidden" name="orderId" value="@Model.Id" />
+        <div class="form-group">
+            <label for="address">Indirizzo</label>
+            <input type="text" id="address" name="address" class="form-control" required />
+            <div class="invalid-feedback">
+                Il campo Indirizzo è obbligatorio.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="notes">Note</label>
+            <textarea id="notes" name="notes" class="form-control" rows="3" required></textarea>
+            <div class="invalid-feedback">
+                Il campo Note è obbligatorio.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Concludi Ordine</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>(function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();</script>
+}

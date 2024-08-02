@@ -1,0 +1,27 @@
+﻿@model Pizzacode.Models.Pizza
+
+<div class="container mt-5">
+    <h2>Conferma Cancellazione</h2>
+
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <h4>Conferma Eliminazione</h4>
+        </div>
+        <div class="card-body">
+            <h5>Sei sicuro di voler eliminare questa pizza?</h5>
+            <h4>@Model.Name</h4>
+            <dl class="row">
+                <dt class="col-sm-3">Prezzo</dt>
+                <dd class="col-sm-9">@Model.Price €</dd>
+                <dt class="col-sm-3">Ingredienti</dt>
+                <dd class="col-sm-9">@Model.Ingredients</dd>
+            </dl>
+
+            <form asp-action="DeleteConfirmed">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger">Elimina</button> |
+                <a asp-action="Index" class="btn btn-secondary">Annulla</a>
+            </form>
+        </div>
+    </div>
+</div>

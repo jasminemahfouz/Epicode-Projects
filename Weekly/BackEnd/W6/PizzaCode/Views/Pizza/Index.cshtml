@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Pizzacode.Models.Pizza>
+
+@{
+    ViewData["Title"] = "Menu delle Pizze";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Menu delle Pizze</h2>
+    <div class="row">
+        @foreach (var pizza in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@pizza.ImageUrl" class="card-img-top" alt="@pizza.Name" style="height:200px; object-fit:cover;" />
+                    <div class="card-body">
+                        <h5 class="card-title">@pizza.Name</h5>
+                        <p class="card-text">
+                            <strong>Prezzo:</strong> @pizza.Price €<br />
+                            <strong>Ingredienti:</strong> @pizza.Ingredients
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <form asp-action="Order" method="post" class="d-inline">
+                                <input type="hidden" name="pizzaId" value="@pizza.Id" />
+                                <input type="number" name="quantity" min="1" value="1" class="form-control form-control-sm w-auto d-inline" style="max-width:70px;" />
+                                <button type="submit" class="btn btn-primary btn-sm">Ordina</button>
+                            </form>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div>
+                                    <a asp-action="Edit" asp-route-id="@pizza.Id" class="btn btn-warning btn-sm">Modifica</a>
+                                    <a asp-action="Delete" asp-route-id="@pizza.Id" class="btn btn-danger btn-sm">Elimina</a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create" class="btn btn-success mt-3">Crea Nuova Pizza</a>
+    }
+</div>

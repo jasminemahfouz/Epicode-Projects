@@ -1,0 +1,56 @@
+﻿@model Pizzacode.Models.Order
+
+@{
+    ViewData["Title"] = "Dettagli Ordine";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Dettagli Ordine</h2>
+
+    <!-- Dettagli dell'ordine -->
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nome Pizza</th>
+                <th>Quantità</th>
+                <th>Prezzo</th>
+                <th>Immagine</th>
+                <th>Tempo di Consegna</th>
+                <th>Ingredienti</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderItems)
+            {
+                <tr>
+                    <td>@item.Pizza.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Pizza.Price * item.Quantity €</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.Pizza.ImageUrl))
+                        {
+                            <img src="@item.Pizza.ImageUrl" alt="@item.Pizza.Name" style="width:100px; height:auto;" />
+                        }
+                    </td>
+                    <td>@item.Pizza.DeliveryTime.ToString(@"hh\:mm")</td>
+                    <td>@item.Pizza.Ingredients</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Dettagli aggiuntivi dell'ordine -->
+    <div class="mt-4">
+        <h4>Indirizzo di Spedizione</h4>
+        <p>@Model.Address</p>
+
+        <h4>Note</h4>
+        <p>@Model.Notes</p>
+
+        <h4>Stato Ordine</h4>
+        <p>@(Model.IsCompleted ? "Completato" : "In elaborazione")</p>
+    </div>
+
+    <!-- Bottone per tornare alla pagina degli ordini -->
+    <a href="@Url.Action("MyOrders", "Order")" class="btn btn-secondary">Torna ai miei ordini</a>
+</div>

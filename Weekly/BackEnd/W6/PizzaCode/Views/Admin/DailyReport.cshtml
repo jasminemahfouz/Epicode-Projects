@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Rapporto Giornaliero";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <!-- Form per la selezione della data -->
+            <form asp-action="DailyReport" method="get">
+                <div class="form-group">
+                    <label for="date">Seleziona la Data:</label>
+                    <input type="date" id="date" name="date" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Genera Rapporto</button>
+            </form>
+
+            <!-- Sezione dei risultati -->
+            @if (ViewBag.TotalOrders != null)
+            {
+                <div class="mt-4">
+                    <h3>Risultati</h3>
+                    <div class="alert alert-success">
+                        <p><strong>Numero totale di ordini evasi:</strong> @ViewBag.TotalOrders</p>
+                        <p><strong>Totale incassato:</strong> @ViewBag.TotalRevenue €</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
