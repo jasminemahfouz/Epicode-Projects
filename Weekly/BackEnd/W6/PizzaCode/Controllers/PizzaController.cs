@@ -26,33 +26,42 @@ namespace Pizzacode.Controllers
             return View(pizzas);
         }
 
-        // Ordina una pizza
         [HttpPost]
         public async Task<IActionResult> Order(int pizzaId, int quantity)
         {
+            // Verifica se l'utente è autenticato
+            if (!User.Identity.IsAuthenticated)
+            {
+                // Reindirizza alla pagina di registrazione se l'utente non è autenticato
+                return RedirectToAction("Register", "Account");
+            }
+
+            // Trova la pizza
             var pizza = await _context.Pizzas.FindAsync(pizzaId);
             if (pizza == null)
             {
                 return NotFound();
             }
 
+            // Trova l'utente
             var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == User.Identity.Name);
             if (user == null)
             {
                 return Unauthorized();
             }
 
+            // Crea l'ordine
             var order = new Order
             {
                 UserId = user.Id,
                 CreatedAt = DateTime.UtcNow,
                 IsCompleted = false,
-                Address = string.Empty, // Temp address, will be filled later
-                Notes = string.Empty,   // Temp notes, will be filled later
+                Address = string.Empty, // Indirizzo temporaneo, sarà compilato successivamente
+                Notes = string.Empty,   // Note temporanee, saranno compilate successivamente
                 OrderItems = new List<OrderItem>
-                {
-                    new OrderItem { PizzaId = pizza.Id, Quantity = quantity }
-                }
+        {
+            new OrderItem { PizzaId = pizza.Id, Quantity = quantity }
+        }
             };
 
             _context.Orders.Add(order);
@@ -60,6 +69,7 @@ namespace Pizzacode.Controllers
 
             return RedirectToAction("OrderSummary", new { orderId = order.Id });
         }
+
 
         // Riepilogo dell'ordine
         public async Task<IActionResult> OrderSummary(int orderId)
